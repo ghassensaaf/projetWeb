@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103.258 78.833">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #19243e;
+      }
+
+      .cls-2 {
+        fill: #e30613;
+      }
+    </style>
+  </defs>
+  <g id="Symbol_25_1" data-name="Symbol 25 – 1" transform="translate(-908.621 -8270.422)">
+    <g id="Group_3495" data-name="Group 3495" transform="translate(908.621 8270.422)">
+      <path id="Path_221982" data-name="Path 221982" class="cls-1" d="M0,1.6,31.533,78.365l8.529-19.644L16.542,1.6Z" transform="translate(0 0.468)"/>
+      <path id="Path_221983" data-name="Path 221983" class="cls-2" d="M86.361,1.5,66.976,48.541,57.8,29.673,69.819,1.5Z" transform="translate(16.897 0.439)"/>
+      <path id="Path_221984" data-name="Path 221984" class="cls-1" d="M43.045,36.315,63.076,78.833l8.4-19.644L43.174,0,28.7,28.948,36.842,48.98Z" transform="translate(8.39)"/>
+    </g>
+  </g>
+</svg>
