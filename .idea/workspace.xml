@@ -2,20 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a5a1fed-1156-454b-8145-b255b12e4d9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/account.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/adresses.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/orders.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editAcc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inc/adressC.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/aef3b791-8c18-4c39-b9aa-823b04a8079b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/aef3b791-8c18-4c39-b9aa-823b04a8079b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adresses.php" beforeDir="false" afterPath="$PROJECT_DIR$/adresses.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/headerCon.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/headerCon.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/userC.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/userC.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/new_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/products.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,6 +78,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="oracle&#10;mariadb&#10;mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -127,7 +123,17 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@315e5003" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@84bc7884" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@84bc7884" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1866e716" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@84bc7884" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3a799a94" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -160,6 +166,7 @@
       <workItem from="1574184090011" duration="3542000" />
       <workItem from="1574188990348" duration="1066000" />
       <workItem from="1574247318098" duration="16294000" />
+      <workItem from="1574284172539" duration="5385000" />
     </task>
     <task id="LOCAL-00001" summary="new new">
       <created>1574254758066</created>
@@ -188,6 +195,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="new new" />
     <option name="LAST_COMMIT_MESSAGE" value="new new" />
   </component>

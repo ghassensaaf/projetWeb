@@ -17,8 +17,10 @@ if(isset($_POST['luser']) and isset($_POST['lpass']))
             {
 
                 session_start();
+                $_SESSION['uname']=$t["u_uname"];
                 $_SESSION['name']=$t["u_name"];
                 $_SESSION['email']=$t["u_email"];
+                $_SESSION['phone']=$t["u_phone"];
                 header('location:index.php');
             }
         }

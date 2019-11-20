@@ -55,11 +55,11 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-user"></i> <span class="vis-toggle">Login/Signup</span></a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="account.php">Account</a>
+                        <a class="dropdown-item" href="account.php">My Account</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Adresses</a>
+                        <a class="dropdown-item" href="adresses.php">My Adresses</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Commands</a>
+                        <a class="dropdown-item" href="#">My Orders</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="logout.php">Logout</a>
 
