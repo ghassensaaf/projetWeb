@@ -27,7 +27,7 @@
                         Hammamet, Nabeul 8050<br>
                         Tunisia <br>
                         <strong>Phone:</strong> +216 22 222 222<br>
-                        <strong>Email:</strong> info@example.com<br>
+                        <strong>Email:</strong> <a href="mailto:info@example.com">info@example.com</a><br>
                     </p>
 
                     <div class="social-links">
