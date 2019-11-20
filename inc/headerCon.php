@@ -52,7 +52,19 @@
                 </li>
                 <li class=""><a href="index.php">Q/A</a></li>
 
-                <li><a href="login.php"><i class="fas fa-user"></i> <span class="vis-toggle">Login/Signup</span></a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-user"></i> <span class="vis-toggle">Login/Signup</span></a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="account.php">Account</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Adresses</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Commands</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="logout.php">Logout</a>
+
+                    </div>
+                </li>
                 <li><a href="cart.php"><i class="fas fa-shopping-basket"></i><span class="vis-toggle">My Shopping bag</span></a><span style="position: absolute;display:inline-block;background-color: #4A8239 ; padding-left:5px;width: 15px; height: 15px; font-size: 9px; color: white  ;border-radius: 50%">1</span></li>
             </ul>
         </nav>

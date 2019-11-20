@@ -1,5 +1,14 @@
 <?php
-include "inc/header.php"
+session_start ();
+if( isset($_SESSION['name'])  && isset($_SESSION['email']))
+{
+    include "inc/headerCon.php";
+}
+else
+{
+    include "inc/header.php";
+}
+
 ?>
 
     <main id="main">

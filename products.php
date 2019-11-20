@@ -1,5 +1,12 @@
 <?php
-    include "inc/header.php"
+if(null===session_id())
+{
+    include "inc/headerCon.php";
+}
+else
+{
+    include "inc/header.php";
+}
 ?>
     <section class="cat_product_area section_gap">
         <div class="container">

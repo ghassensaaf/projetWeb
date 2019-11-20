@@ -2,11 +2,12 @@
 include 'inc/user.php';
 include 'inc/userC.php';
 
-if (isset($_POST['uname']) and isset($_POST['name']) and isset($_POST['email']) and isset($_POST['pwd']))
+if (isset($_POST['uname']) and isset($_POST['name']) and isset($_POST['email']) and isset($_POST['pwd']) and isset($_POST['phone']))
 {
-    $user=new user($_POST['uname'],$_POST['name'],$_POST['email'],$_POST['pwd']);
+    $user=new user($_POST['uname'],$_POST['name'],$_POST['email'],$_POST['pwd'],$_POST['phone']);
     $userC= new userC();
     $req=$userC->addUser($user);
+
 }
 else
 {

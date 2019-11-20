@@ -1,5 +1,13 @@
 <?php
+if(null===session_id())
+{
+    include "inc/headerCon.php";
+}
+else
+{
     include "inc/header.php";
+}
+
 ?>
 
 <main>
@@ -8,15 +16,15 @@
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
             <div class="login-form">
-                <form class="signin" action="index.php" method="post">
+                <form class="signin" action="auth.php" method="post">
                     <div class="sign-in-htm">
                         <div class="group">
                             <label for="luser" class="label">Username</label>
-                            <input id="luser" type="text" class="input" placeholder="username/e-mail">
+                            <input id="luser" name="luser" type="text" class="input" placeholder="username/e-mail">
                         </div>
                         <div class="group">
                             <label for="lpass" class="label">Password</label>
-                            <input id="lpass" type="password" class="input" data-type="password" placeholder="password">
+                            <input id="lpass" name="lpass" type="password" class="input" data-type="password" placeholder="password">
                         </div>
                         <div class="group">
                             <input id="show-hide-pw" type="checkbox" class="check" onclick="ShowHidePass()">
@@ -56,6 +64,10 @@
                         <div class="group">
                             <label for="mail" class="label">Email Address</label>
                             <input id="mail" name="email" type="text" class="input">
+                        </div>
+                        <div class="group">
+                            <label for="phone" class="label">Phone Number</label>
+                            <input id="phone" name="phone" type="text" class="input">
                         </div>
                         <div class="group">
                             <input type="submit" class="button" value="Sign Up">

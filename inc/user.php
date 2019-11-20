@@ -5,16 +5,33 @@ class user
     public $uname;
     public $email;
     public $name;
+    public $phone;
     private $pwd;
 
-    public function __construct($uname,$name,$email,$pwd)
+    public function __construct($uname,$name,$email,$pwd,$phone)
     {
         $this->uname=$uname;
         $this->name=$name;
         $this->email=$email;
         $this->pwd=$pwd;
+        $this->phone=$phone;
     }
 
+    /**
+     * @param mixed $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
     /**
      * @param mixed $uname
      */
