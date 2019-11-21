@@ -46,16 +46,16 @@ else
                 <form class="signup" action="new_user.php" method="post">
                     <div class="sign-up-htm">
                         <div class="group">
-                            <label for="user" class="label">Username</label>
-                            <input id="user" name="uname" type="text" class="input" placeholder="username">
+                            <label for="luser" class="label">Username</label>
+                            <input id="luser" name="luser" type="text" class="input" placeholder="username">
                         </div>
                         <div class="group">
                             <label for="name" class="label">Full Name</label>
                             <input id="name" name="name" type="text" class="input" placeholder="nom prenom">
                         </div>
                         <div class="group">
-                            <label for="pass" class="label">Password</label>
-                            <input id="pass" name="pwd" type="password" class="input" data-type="password" placeholder="password">
+                            <label for="lpass" class="label">Password</label>
+                            <input id="lpass" name="lpass" type="password" class="input" data-type="password" placeholder="password">
                         </div>
                         <div class="group">
                             <label for="pass2" class="label">Repeat Password</label>

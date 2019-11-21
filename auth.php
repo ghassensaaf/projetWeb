@@ -12,12 +12,11 @@ if(isset($_POST['luser']) and isset($_POST['lpass']))
         foreach ($u as $t)
         {
             $lgdin=true;
-            var_dump($t);
             if(($t['u_uname']===$uname) &&(($t['u_pwd']===MD5($upass))))
             {
 
                 session_start();
-                $_SESSION['uname']=$t["u_uname"];
+                $_SESSION['uanme']=$t["u_uname"];
                 $_SESSION['name']=$t["u_name"];
                 $_SESSION['email']=$t["u_email"];
                 $_SESSION['phone']=$t["u_phone"];
@@ -28,7 +27,7 @@ if(isset($_POST['luser']) and isset($_POST['lpass']))
     if($lgdin==false)
     {
         echo '<body onLoad="alert(\'Membre non reconnu...\')">';
-        // puis on le redirige vers la page d'accueil
+            // puis on le redirige vers la page d'accueil
         echo '<meta http-equiv="refresh" content="0;URL=login.php">';
     }
 
