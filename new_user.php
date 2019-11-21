@@ -1,13 +1,13 @@
 <?php
 include 'inc/user.php';
-include 'inc/userC.php';
+include 'inc/fonctionC.php';
 
-if (isset($_POST['uname']) and isset($_POST['name']) and isset($_POST['email']) and isset($_POST['pwd']) and isset($_POST['phone']))
+if (isset($_POST['luser']) and isset($_POST['name']) and isset($_POST['email']) and isset($_POST['lpass']) and isset($_POST['phone']))
 {
-    $user=new user($_POST['uname'],$_POST['name'],$_POST['email'],$_POST['pwd'],$_POST['phone']);
-    $userC= new userC();
-    $req=$userC->addUser($user);
-
+    $user=new user($_POST['luser'],$_POST['name'],$_POST['email'],$_POST['lpass'],$_POST['phone']);
+    $fonctionC= new fonctionC();
+    $req=$fonctionC->addUser($user);
+    include 'auth.php';
 }
 else
 {

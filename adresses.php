@@ -1,5 +1,6 @@
 <?php
-include 'inc/adressC.php';
+
+include 'inc/fonctionC.php';
 session_start ();
 if( isset($_SESSION['name'])  && isset($_SESSION['email']))
 {
@@ -10,9 +11,8 @@ else
     include "inc/header.php";
 }
 
-$a=new adressC();
+$a=new fonctionC();
 $listA=$a->showAdress($_SESSION['uname']);
-
 ?>
 
 <main>

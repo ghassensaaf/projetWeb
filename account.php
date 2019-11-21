@@ -20,7 +20,7 @@ else
                     <div class="sign-in-htm">
                         <div class="group">
                             <label for="name" class="label">name</label>
-                            <input id="name" name="name" type="text" class="input" value="<?php echo $_SESSION['name']?>" placeholder="name">
+                            <input id="name" name="name" type="text" class="input" value="<?php echo $_SESSION['uname']?>" placeholder="name">
                         </div>
                         <div class="group">
                             <label for="email" class="label">Email</label>

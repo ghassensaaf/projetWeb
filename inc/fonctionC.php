@@ -1,7 +1,7 @@
 <?php
 
 include "config.php";
-class userC
+class fonctionC
 {
     function addUser($user)
     {
@@ -47,5 +47,34 @@ class userC
             die('Erreur: '.$e->getMessage());
         }
 
+    }
+    function showUsers()
+    {
+        $sql="select * from amammou.users";
+        $db = config::getConnexion();
+        try
+        {
+            $list=$db->query($sql);
+            return $list;
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+    }
+    function showAdress($uname)
+    {
+        $sql="select * from amammou.adresses where u_uname='$uname'";
+
+        $db = config::getConnexion();
+        try
+        {
+            $list=$db->query($sql);
+            return $list;
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
     }
 }

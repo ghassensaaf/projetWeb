@@ -1,4 +1,9 @@
-<?php include 'inc/header.php';?>
+<?php
+include 'inc/header.php';
+include '../inc/fonctionC.php';
+$t=new fonctionC();
+$listClient=$t->showUsers();
+?>
 
 <div class="breadcrumbs">
     <div class="breadcrumbs-inner">
@@ -47,22 +52,32 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td class="serial">1.</td>
+                            <?php
+                            $x=1;
+                            foreach ($listClient as $row)
+                            {
+                                $listAdd=$t->showAdress($row["u_uname"]);
+                                echo '
+                                <tr>
+                                <td class="serial">'.$x.'</td>
                                 <td class="avatar">
                                     <div class="round-img">
                                         <a href="#"><img class="rounded-circle" src="images/admin.jpg" alt=""></a>
                                     </div>
                                 </td>
                                 <td> saafgh </td>
-                                <td>  <span class="name">Saaf Ghassen</span> </td>
-                                <td> <span class="email"> saafghassen@gmail.com</span> </td>
-                                <td><span class=""><a href="">3</a></span></td>
+                                <td>  <span class="name">'.$row["u_name"].'</span> </td>
+                                <td> <span class="email">'.$row["u_email"].'</span> </td>
+                                <td><span class=""><a href="">'.$listAdd->rowCount().'</a></span></td>
                                 <td>
                                     <span <button class="btn-sm btn-warning"><a style="color: white;" href="#">Edit</a></button> </span>
                                     <span <button class="btn-sm btn-danger"><a style="color: white;" href="#">Delete</a></button> </span>
                                 </td>
                             </tr>
+                                ';
+                                $x++;
+                            }
+                            ?>
                             </tbody>
                         </table>
                     </div> <!-- /.table-stats -->

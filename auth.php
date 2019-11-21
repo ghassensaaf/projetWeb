@@ -1,11 +1,19 @@
 <?php
-include "inc/userC.php";
+if (isset($_POST['email']))
+{
+
+}
+else
+{
+    include "inc/fonctionC.php";
+}
+
 if(isset($_POST['luser']) and isset($_POST['lpass']))
 {
     $uname=$_POST['luser'];
     $upass=$_POST['lpass'];
-    $user=new userC();
-    $u=$user->Logedin($uname,$upass);
+    $use=new fonctionC();
+    $u=$use->Logedin($uname,$upass);
     $lgdin=false;
     if(!empty($uname)&&!empty($upass))
     {
@@ -16,12 +24,12 @@ if(isset($_POST['luser']) and isset($_POST['lpass']))
             {
 
                 session_start();
-                $_SESSION['uanme']=$t["u_uname"];
+                $_SESSION['uname']=$t["u_uname"];
                 $_SESSION['name']=$t["u_name"];
                 $_SESSION['email']=$t["u_email"];
                 $_SESSION['phone']=$t["u_phone"];
                 header('location:index.php');
-                echo "salemdddd";
+
             }
         }
     }
