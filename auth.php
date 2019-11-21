@@ -21,7 +21,7 @@ if(isset($_POST['luser']) and isset($_POST['lpass']))
                 $_SESSION['email']=$t["u_email"];
                 $_SESSION['phone']=$t["u_phone"];
                 header('location:index.php');
-                echo "salemdd";
+                echo "salemdddd";
             }
         }
     }
