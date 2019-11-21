@@ -4,7 +4,6 @@
     <list default="true" id="4a5a1fed-1156-454b-8145-b255b12e4d9c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +62,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Ghassen Saaf &lt;ghassen.saaf@esprit.tn&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
@@ -146,7 +150,7 @@
       <workItem from="1574188990348" duration="1066000" />
       <workItem from="1574247318098" duration="16294000" />
       <workItem from="1574284172539" duration="6609000" />
-      <workItem from="1574324552482" duration="4135000" />
+      <workItem from="1574324552482" duration="4860000" />
     </task>
     <task id="LOCAL-00001" summary="new new">
       <created>1574254758066</created>
@@ -155,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574254758066</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="auth update">
+      <created>1574332232767</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1574332232767</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +188,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="new new" />
-    <option name="LAST_COMMIT_MESSAGE" value="new new" />
+    <MESSAGE value="auth update" />
+    <option name="LAST_COMMIT_MESSAGE" value="auth update" />
   </component>
 </project>
