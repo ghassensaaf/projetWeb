@@ -34,10 +34,10 @@
             <div class="login-logo">
             </div>
             <div class="login-form">
-                <form>
+                <form method="post" action="adminAuth.php">
                     <div class="form-group">
-                        <label for="email" >Email address</label>
-                        <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                        <label for="login" >Email address</label>
+                        <input type="text" name="login" id="login" class="form-control" placeholder="Email">
                     </div>
                     <div class="form-group">
                         <label for="pwd">Password</label>

@@ -1,4 +1,16 @@
-<?php include 'inc/header.php';?>
+<?php
+session_start();
+if ($_SESSION["role"] == "admin")
+{
+
+}
+else
+{
+    header("location:login.php");
+}
+include 'inc/header.php';
+?>
+
 
 <div class="breadcrumbs">
     <div class="breadcrumbs-inner">

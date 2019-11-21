@@ -55,7 +55,7 @@ class fonctionC
         try
         {
             $list=$db->query($sql);
-            return $list;
+            return $list->fetchAll();
         }
         catch (Exception $e)
         {
@@ -65,7 +65,6 @@ class fonctionC
     function showAdress($uname)
     {
         $sql="select * from amammou.adresses where u_uname='$uname'";
-
         $db = config::getConnexion();
         try
         {
@@ -76,5 +75,56 @@ class fonctionC
         {
             die('Erreur: '.$e->getMessage());
         }
+    }
+    function editUser($uname,$name,$email,$phone,$pwd=null)
+    {
+        $sql="update amammou.users set u_name= '$name', u_email='$email', u_phone='$phone'";
+        if(($pwd==null) or ($pwd==""))
+        {
+            $sql=$sql." where u_uname='$uname'";
+        }
+        else
+        {
+            $sql=$sql.",u_pwd=md5('$pwd') where u_uname='$uname'";
+            echo $sql;
+        }
+        $db = config::getConnexion();
+        try
+        {
+            $db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+    }
+    function getUser($uname)
+    {
+        $sql="select * from amammou.users where u_uname='$uname'";
+        $db = config::getConnexion();
+        try
+        {
+            $u=$db->query($sql);
+            return $u;
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+    }
+    public function adminLogIn($login,$pwd)
+    {
+        $req="select * from amammou.admin where login='$login' && pwd=md5('$pwd')";
+        $db = config::getConnexion();
+        try
+        {
+            $rep=$db->query($req);
+            return $rep->fetchAll();
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+
     }
 }

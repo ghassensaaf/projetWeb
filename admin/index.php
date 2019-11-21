@@ -1,4 +1,24 @@
-<?php include 'inc/header.php'; ?>
+<?php ;
+session_start();
+if ($_SESSION["role"] == "admin")
+{
+
+}
+else
+{
+    header("location:login.php");
+}
+
+include 'inc/header.php';
+include '../inc/fonctionC.php';
+
+
+$i=new fonctionC();
+$u=$i->showUsers();
+$x=0;
+foreach ($u as $t) {$x++;}
+?>
+
         <!-- Content -->
         <div class="content">
             <!-- Animated -->
@@ -68,7 +88,7 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
-                                            <div class="stat-text"><span class="count">2986</span></div>
+                                            <div class="stat-text"><span class="count"><?php echo $x;?></span></div>
                                             <div class="stat-heading">Clients</div>
                                         </div>
                                     </div>
