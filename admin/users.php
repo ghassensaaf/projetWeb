@@ -92,7 +92,7 @@ $listClient=$t->showUsers();
                         </div>
                     </div>
                     <div class="table-stats order-table ov-h">
-                        <table class="table ">
+                        <table   class="table table-hover">
                             <thead>
                             <tr>
                                 <th class="serial">#</th>

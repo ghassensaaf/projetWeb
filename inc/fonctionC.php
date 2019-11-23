@@ -130,6 +130,47 @@ class fonctionC
     public function deleteUser($uname)
     {
         $sql="DELETE FROM amammou.users WHERE u_uname = '$uname' ";
+        $sql2="DELETE FROM amammou.adresses WHERE u_uname = '$uname' ";
+        $db = config::getConnexion();
+        try
+        {
+            $db->query($sql);
+            $db->query($sql2);
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+    }
+    public function addAddress($address)
+    {
+        $sql= "insert into amammou.adresses(u_uname, add_name, name, street, city, zip_code, state, country, phone) values (:un,:an,:na,:st,:ci,:zip,:stt,:co,:ph)";
+        $db = config::getConnexion();
+        try
+        {
+            $req=$db->prepare($sql);
+            $req->bindValue(':un',$address->getUname());
+            $req->bindValue(':an',$address->getAdname());
+            $req->bindValue(':na',$address->getName());
+            $req->bindValue(':st',$address->getStreet());
+            $req->bindValue(':ci',$address->getCity());
+            $req->bindValue(':zip',$address->getZip());
+            $req->bindValue(':stt',$address->getState());
+            $req->bindValue(':co',$address->getCountry());
+            $req->bindValue(':ph',$address->getPhone());
+
+            $req->execute();
+            return true;
+
+        }
+        catch (Exception $e)
+        {
+            return('Erreur: '.$e->getCode());
+        }
+    }
+    public function deleteAdd($addId)
+    {
+        $sql="DELETE FROM amammou.adresses WHERE add_id = '$addId' ";
         $db = config::getConnexion();
         try
         {
@@ -140,4 +181,18 @@ class fonctionC
             die('Erreur: '.$e->getMessage());
         }
     }
+    function editAdd($add_id,$add_name,$name,$street,$city,$state,$zip,$phone)
+    {
+        $sql="update amammou.adresses set add_name= '$add_name', name='$name',street='$street',city='$city',state='$state',zip_code='$zip', phone='$phone' where add_id='$add_id'";
+        $db = config::getConnexion();
+        try
+        {
+            $db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+    }
+
 }

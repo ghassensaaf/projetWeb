@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a5a1fed-1156-454b-8145-b255b12e4d9c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/addAdd.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/editAdd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/aef3b791-8c18-4c39-b9aa-823b04a8079b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/aef3b791-8c18-4c39-b9aa-823b04a8079b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/logout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/new_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adresses.php" beforeDir="false" afterPath="$PROJECT_DIR$/adresses.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editAcc.php" beforeDir="false" afterPath="$PROJECT_DIR$/deleteAdd.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/fonctionC.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/fonctionC.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/user.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -219,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574520100638</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="correct 2">
+      <created>1574520779685</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1574520779685</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
