@@ -127,4 +127,17 @@ class fonctionC
         }
 
     }
+    public function deleteUser($uname)
+    {
+        $sql="DELETE FROM amammou.users WHERE u_uname = '$uname' ";
+        $db = config::getConnexion();
+        try
+        {
+            $db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+    }
 }
