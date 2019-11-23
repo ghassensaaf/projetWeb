@@ -1,13 +1,13 @@
 <?php
-if(null===session_id())
+session_start ();
+if( isset($_SESSION['name'])  && isset($_SESSION['email']))
 {
-    include "inc/headerCon.php";
+    header("location:index.php");
 }
 else
 {
     include "inc/header.php";
 }
-
 ?>
 
 <main>

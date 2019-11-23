@@ -1,5 +1,6 @@
 <?php
-if(null===session_id())
+session_start ();
+if( isset($_SESSION['name'])  && isset($_SESSION['email']))
 {
     include "inc/headerCon.php";
 }

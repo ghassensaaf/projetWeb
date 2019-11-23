@@ -64,7 +64,7 @@ class fonctionC
     }
     function showAdress($uname)
     {
-        $sql="select * from amammou.adresses where u_uname='$uname'";
+        $sql="select * from amammou.adresses where u_uname='$uname' ORDER BY add_id ASC";
         $db = config::getConnexion();
         try
         {
