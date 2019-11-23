@@ -8,7 +8,7 @@ if( isset($_SESSION['name'])  && isset($_SESSION['email']))
 }
 else
 {
-    header("location:index.php");
+    include "inc/header.php";
 }
 
 $a=new fonctionC();

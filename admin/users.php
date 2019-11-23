@@ -43,53 +43,9 @@ $listClient=$t->showUsers();
     <div class="animated fadeIn">
         <div class="row">
             <div class="col-lg-12">
-                <div class="card row">
+                <div class="card">
                     <div class="card-header">
-                        <strong class="card-title col-6">User List</strong>
-                        <span class="text-center">
-                            <a href="" class="btn-sm btn-primary" data-toggle="modal" data-target="#modalRegisterFormss">Add User</a>
-                        </span>
-                        <div class="modal fade" id="modalRegisterFormss" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header text-center">
-                                        <h4 class="modal-title w-100 font-weight-bold">New Account</h4>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <form action="../new_user.php" method="post">
-                                        <div class="modal-body mx-3">
-                                            <div class="md-form mb-5">
-                                                <label data-error="wrong" data-success="right" for="orangeForm-name">Username</label>
-                                                <input type="text" id="orangeForm-name" name="luser" class="form-control validate" placeholder="">
-                                            </div>
-                                            <div class="md-form mb-5">
-                                                <label data-error="wrong" data-success="right" for="orangeForm-name">Name</label>
-                                                <input type="text" id="orangeForm-name" name="name" class="form-control validate" value="">
-                                            </div>
-                                            <div class="md-form mb-5">
-                                                <label data-error="wrong" data-success="right" for="orangeForm-name">Password</label>
-                                                <input type="password" id="orangeForm-name" name="lpass" class="form-control validate" value="">
-                                            </div>
-                                            <div class="md-form mb-5">
-                                                <label data-error="wrong" data-success="right" for="orangeForm-email">Email</label>
-                                                <input type="email" id="orangeForm-email" name="email" class="form-control validate" value="">
-                                            </div>
-                                            <input type="hidden" name="role" value="<?php echo $_SESSION['role'] ?>">
-                                            <div class="md-form mb-4">
-                                                <label data-error="wrong" data-success="right" for="orangeForm-pass">Phone number</label>
-                                                <input type="text" id="orangeForm-pass" name="phone" class="form-control validate" value="">
-                                            </div>
-
-                                        </div>
-                                        <div class="modal-footer d-flex justify-content-center">
-                                            <input type="submit" class="btn btn-primary" value="submit changes">
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                        <strong class="card-title">User List</strong>
                     </div>
                     <div class="table-stats order-table ov-h">
                         <table class="table ">
@@ -169,39 +125,7 @@ $listClient=$t->showUsers();
                                     
                                 </td>
                                 <td>
-                                    <div class="text-center">
-                                      <a href="" class="btn-sm btn-danger" data-toggle="modal" data-target="#modalRegisterForm'.$x.$x.'">Delete</a>
-                                    </div>
-                                    <div class="modal fade" id="modalRegisterForm'.$x.$x.'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
-                                      <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                          <div class="modal-header text-center">
-                                            <h4 class="modal-title w-100 font-weight-bold">Delete Account</h4>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                              <span aria-hidden="true">&times;</span>
-                                            </button>
-                                          </div>
-                                          <form action="deleteUser.php" method="post">
-                                            <div class="modal-body mx-3">
-                                            <div class="md-form mb-5">
-                                              <p class="text-center"> Username </p>
-                                              <input type="text" id="orangeForm-name" name="" class="form-control validate" value="'.$row["u_uname"].'" disabled>
-                                            </div>
-                                            <div class="md-form mb-5">
-                                              <p class="text-center text-danger">Do you Really Want to delete the user with the above username</p>
-                                            </div>
-                                            <input type="hidden" name="uname" value="'.$row["u_uname"].'">
-                                          </div>
-                                          <div class="modal-footer d-flex justify-content-center">
-                                            <input type="submit" class="btn btn-danger" value="Confirm">
-                                            <input type="button" class="btn btn-success" data-dismiss="modal" aria-label="Close" value="Cancel">
-                                             
-                                          </div>
-                                          </form>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    
+                                <span <button class="btn-sm btn-danger"><a style="color: white;" href="#">Delete</a></button> </span>
                                 </td>
                             </tr>
                                 ';

@@ -1,14 +1,13 @@
 <?php
 include 'inc/fonctionC.php';
 session_start ();
-
 if( isset($_SESSION['name'])  && isset($_SESSION['email']))
 {
     include "inc/headerCon.php";
 }
 else
 {
-    header("location:index.php");
+    include "inc/header.php";
 }
 $n=new fonctionC();
 $u=$n->getUser($_SESSION['uname']);
