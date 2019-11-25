@@ -6,10 +6,13 @@ class admin
     private $login;
     private $email;
     private $pwd;
+    private $status;
+    private $name;
 
-    function __construct($login,$email,$pwd)
+    function __construct($login,$name,$email,$pwd)
     {
         $this->login=$login;
+        $this->name=$name;
         $this->email=$email;
         $this->pwd=$pwd;
     }
@@ -17,6 +20,36 @@ class admin
     /**
      * @param mixed $email
      */
+    /**
+     * @return mixed
+     */
+    /**
+     * @param mixed $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+    public function getStatus()
+    {
+        return $this->status;
+    }
     public function setEmail($email)
     {
         $this->email = $email;

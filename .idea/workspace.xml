@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a5a1fed-1156-454b-8145-b255b12e4d9c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/admin/addAdmin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/editAdmin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/editStatus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/aef3b791-8c18-4c39-b9aa-823b04a8079b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/aef3b791-8c18-4c39-b9aa-823b04a8079b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/adminAuth.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/adminAuth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/admins.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admins.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/forgot.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/forgot.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/inc/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/inc/admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/fonctionC.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/fonctionC.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/products.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -104,14 +109,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\projetWeb\inc" />
+      <recent name="C:\wamp64\www\php 101\login" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\projetWeb\" />
       <recent name="C:\wamp64\www\php 101" />
       <recent name="C:\wamp64\www\php 101\inc" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\projetWeb\inc" />
-      <recent name="C:\wamp64\www\php 101\login" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -135,7 +140,17 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@868d8610" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@868d8610" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@133106fb" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -171,6 +186,10 @@
       <workItem from="1574437565859" duration="559000" />
       <workItem from="1574456930735" duration="5247000" />
       <workItem from="1574515590658" duration="284000" />
+      <workItem from="1574540065185" duration="35000" />
+      <workItem from="1574545348343" duration="296000" />
+      <workItem from="1574549931942" duration="2889000" />
+      <workItem from="1574679834901" duration="13060000" />
     </task>
     <task id="LOCAL-00001" summary="new new">
       <created>1574254758066</created>

@@ -194,5 +194,69 @@ class fonctionC
             die('Erreur: '.$e->getMessage());
         }
     }
+    function getAdmins()
+    {
+        $sql="select * from amammou.admin";
+        $db=config::getConnexion();
+        try
+        {
+            return $db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            die('Erreur : '.$e->getMessage());
+        }
+    }
+    function addAdmin($admin)
+    {
+        $sql="insert into amammou.admin (login, email, pwd, name) values (:log,:em,:pw,:na)";
+        $db=config::getConnexion();
+        try
+        {
+            $req=$db->prepare($sql);
+            $req->bindValue(':log',$admin->getLogin());
+            $req->bindValue(':em',$admin->getEmail());
+            $req->bindValue(':pw',md5($admin->getPwd()));
+            $req->bindValue(':na',$admin->getName());
+            $req->execute();
+        }
+        catch (Exception $e)
+        {
+            echo 'Error :'.$e->getMessage();
+        }
+    }
+    function editAdmin($login,$name,$email)
+    {
+        $sql="update amammou.admin set name='$name',email='$email' where login='$login'";
+        $db=config::getConnexion();
+        try
+        {
+            $db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            echo 'Error: '.$e->getMessage();
+        }
+    }
+    function editStatus($login,$status)
+    {
+        if($status==1)
+        {
+            $sql="update amammou.admin set status = 0 where login='$login'";
+        }
+        else
+        {
+            $sql="update amammou.admin set status = 1 where login='$login'";
+        }
+        $db=config::getConnexion();
+        try
+        {
+            $db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            echo 'Error: '.$e->getMessage();
+        }
 
+    }
 }
