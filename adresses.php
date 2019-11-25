@@ -41,7 +41,7 @@ echo '
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <form action="editAdd.php" method="post">
+                                <form action="admin/forms.php" method="post">
                                     <div class="modal-body mx-3">
                                         <div class="md-form mb-2">
                                             <label for="uname">Username</label>
@@ -105,6 +105,7 @@ echo '
                                             <input type="text" id="phone" name="phone" class="form-control validate" value="'.$ad["phone"].'" placeholder="phone number">
                                         </div>
                                         <input type="hidden" name="add_id" value="'.$ad["add_id"].'">
+                                        <input type="hidden" name="form" value="editAdd">
                                     </div>
                                     <div class="modal-footer d-flex justify-content-center">
                                         <input type="submit" class="btn btn-outline-success" value="Confirm Changes">
@@ -125,7 +126,7 @@ echo '
                                               <span aria-hidden="true">&times;</span>
                                             </button>
                                           </div>
-                                          <form action="deleteAdd.php" method="post">
+                                          <form action="admin/forms.php" method="post">
                                             <div class="modal-body mx-3">
                                             <div class="md-form mb-5">
                                               <p class="text-center"> Address Name </p>
@@ -135,6 +136,7 @@ echo '
                                               <p class="text-center text-danger">Do you Really Want to delete the above address</p>
                                             </div>
                                             <input type="hidden" name="add_id" value="'.$ad["add_id"].'">
+                                            <input type="hidden" name="form" value="deleteAdd">
                                           </div>
                                           <div class="modal-footer d-flex justify-content-center">
                                             <input type="submit" class="btn btn-danger" value="Confirm">
@@ -164,7 +166,7 @@ $x++;
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="addAdd.php" method="post">
+                    <form action="admin/forms.php" method="post">
                         <div class="modal-body mx-3">
                             <div class="md-form mb-2">
                                 <label for="uname">Username</label>
@@ -228,6 +230,7 @@ $x++;
                                 <input type="text" id="phone" name="phone" class="form-control validate" value="" placeholder="phone number">
                             </div>
                             <input type="hidden" name="uname" value="<?php echo $_SESSION["uname"]?>">
+                            <input type="hidden" name="form" value="addAdd">
                         </div>
                         <div class="modal-footer d-flex justify-content-center">
                             <input type="submit" class="btn btn-outline-success" value="Add">

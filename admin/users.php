@@ -136,7 +136,7 @@ $listClient=$t->showUsers();
                                               <span aria-hidden="true">&times;</span>
                                             </button>
                                           </div>
-                                          <form action="editUser.php" method="post">
+                                          <form action="forms.php" method="post">
                                             <div class="modal-body mx-3">
                                             <div class="md-form mb-5">
                                               <label data-error="wrong" data-success="right" for="orangeForm-name">Username</label>
@@ -156,6 +156,7 @@ $listClient=$t->showUsers();
                                               <input type="text" id="orangeForm-pass" name="phone" class="form-control validate" value="'.$row["u_phone"].'">
                                             </div>
                                             <input type="hidden" name="uname" value="'.$row["u_uname"].'">
+                                            <input type="hidden" name="form" value="editUser">
                                           </div>
                                           <div class="modal-footer d-flex justify-content-center">
                                             <input type="submit" class="btn btn-primary" value="submit changes">
@@ -181,7 +182,7 @@ $listClient=$t->showUsers();
                                               <span aria-hidden="true">&times;</span>
                                             </button>
                                           </div>
-                                          <form action="deleteUser.php" method="post">
+                                          <form action="forms.php" method="post">
                                             <div class="modal-body mx-3">
                                             <div class="md-form mb-5">
                                               <p class="text-center"> Username </p>
@@ -191,6 +192,7 @@ $listClient=$t->showUsers();
                                               <p class="text-center text-danger">Do you Really Want to delete the user with the above username</p>
                                             </div>
                                             <input type="hidden" name="uname" value="'.$row["u_uname"].'">
+                                            <input type="hidden" name="form" value="deleteUser">
                                           </div>
                                           <div class="modal-footer d-flex justify-content-center">
                                             <input type="submit" class="btn btn-danger" value="Confirm">

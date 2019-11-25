@@ -24,7 +24,7 @@ foreach ($u as $t)
         <div style="padding: 20% 10%; ">
             <h3 style="width:30%;margin: auto;">My Account</h3>
             <div class="login-form">
-                <form class="signin" action="admin/editUser.php" method="post">
+                <form class="signin" action="admin/forms.php" method="post">
                     <div class="sign-in-htm">
                         <div class="group">
                             <label for="uname" class="label">username</label>
@@ -49,6 +49,7 @@ foreach ($u as $t)
                             <label for="pwd" class="label"><span style="font-size: 9px;">  leave blank if won't change</span></label>
                         </div>
                         <input type="hidden" name="uname" value="<?php echo $t['u_uname']?>">
+                        <input type="hidden" name="form" value="editUser">
                         <div class="group">
                             <input type="submit" class="button" value="Submit Changes">
                         </div>

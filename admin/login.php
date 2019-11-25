@@ -34,7 +34,7 @@
             <div class="login-logo">
             </div>
             <div class="login-form">
-                <form method="post" action="adminAuth.php">
+                <form method="post" action="forms.php">
                     <div class="form-group">
                         <label for="login" >Email address</label>
                         <input type="text" name="login" id="login" class="form-control" placeholder="Email">
@@ -43,6 +43,7 @@
                         <label for="pwd">Password</label>
                         <input id="pwd" name="pwd" type="password" class="form-control" placeholder="Password">
                     </div>
+                    <input type="hidden" name="form" value="adminAuth">
                     <div class="checkbox">
                         <label>
                             <input type="checkbox"> Remember Me

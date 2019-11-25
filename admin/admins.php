@@ -59,7 +59,7 @@ $la=$f->getAdmins();
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form action="addAdmin.php" method="post">
+                                    <form action="forms.php" method="post">
                                         <div class="modal-body mx-3">
                                             <div class="md-form mb-5">
                                                 <label data-error="wrong" data-success="right" for="orangeForm-name">login</label>
@@ -79,6 +79,7 @@ $la=$f->getAdmins();
                                             </div>
 
                                         </div>
+                                        <input type="hidden" name="form" value="addAdmin">
                                         <div class="modal-footer d-flex justify-content-center">
                                             <input type="submit" class="btn btn-primary" value="submit changes">
                                         </div>
@@ -143,7 +144,7 @@ $la=$f->getAdmins();
                                               <span aria-hidden="true">&times;</span>
                                             </button>
                                           </div>
-                                          <form action="editAdmin.php" method="post">
+                                          <form action="forms.php" method="post">
                                             <div class="modal-body mx-3">
                                             <div class="md-form mb-5">
                                               <label data-error="wrong" data-success="right" for="orangeForm-name">Username</label>
@@ -160,6 +161,7 @@ $la=$f->getAdmins();
                                     
                                             
                                             <input type="hidden" name="login" value="'.$a["login"].'">
+                                            <input type="hidden" name="form" value="editAdmin">
                                           </div>
                                           <div class="modal-footer d-flex justify-content-center">
                                             <input type="submit" class="btn btn-primary" value="submit changes">
@@ -194,7 +196,7 @@ $la=$f->getAdmins();
                                               <span aria-hidden="true">&times;</span>
                                             </button>
                                           </div>
-                                          <form action="editStatus.php" method="post">
+                                          <form action="forms.php" method="post">
                                             <div class="modal-body mx-3">
                                             <div class="md-form mb-5">
                                               <p class="text-center"> Username </p>
@@ -211,6 +213,7 @@ $la=$f->getAdmins();
                                             </div>
                                             <input type="hidden" name="login" value="'.$a["login"].'">
                                             <input type="hidden" name="status" value="'.$a["status"].'">
+                                            <input type="hidden" name="form" value="editStatus">
                                           </div>
                                           <div class="modal-footer d-flex justify-content-center">
                                             <input type="submit" class="btn btn-danger" value="Confirm">
