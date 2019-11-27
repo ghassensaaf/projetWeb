@@ -35,22 +35,7 @@ else
                                     <td class="product-subtotal">165.00 TND  </td>
                                     <td class="product-remove"><a href="#">X</a></td>
                                 </tr>
-                                <tr>
-                                    <td class="product-thumbnail"><a href="#"><img src="img/prods/1.jpg" width="80px" alt="product img"></a></td>
-                                    <td class="product-name"><a href="#">Quisque fringilla</a></td>
-                                    <td class="product-price"><span class="amount">50.00 TND</span></td>
-                                    <td class="product-quantity"><input type="number" value="1"></td>
-                                    <td class="product-subtotal">50.00 TND</td>
-                                    <td class="product-remove"><a href="#">X</a></td>
-                                </tr>
-                                <tr>
-                                    <td class="product-thumbnail"><a href="#"><img src="img/prods/1.jpg" width="80px" alt="product img"></a></td>
-                                    <td class="product-name"><a href="#">Vestibulum suscipit</a></td>
-                                    <td class="product-price"><span class="amount">50.00 TND</span></td>
-                                    <td class="product-quantity"><input type="number" value="1"></td>
-                                    <td class="product-subtotal">50.00 TND</td>
-                                    <td class="product-remove"><a href="#">X</a></td>
-                                </tr>
+                                
                                 </tbody>
                             </table>
                         </div>

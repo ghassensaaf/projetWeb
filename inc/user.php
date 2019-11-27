@@ -35,7 +35,7 @@ class user
     /**
      * @param mixed $uname
      */
-    public function setUname($uname): void
+    public function setUname($uname)
     {
         $this->uname = $uname;
     }
@@ -51,7 +51,7 @@ class user
     /**
      * @param mixed $email
      */
-    public function setEmail($email): void
+    public function setEmail($email)
     {
         $this->email = $email;
     }
@@ -59,7 +59,7 @@ class user
     /**
      * @param mixed $pwd
      */
-     function setPwd($pwd): void
+     function setPwd($pwd)
     {
         $this->pwd = $pwd;
     }

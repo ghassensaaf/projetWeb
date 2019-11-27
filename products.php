@@ -8,6 +8,9 @@ else
 {
     include "inc/header.php";
 }
+include "inc/fonctionC.php";
+$f=new fonctionC();
+$p=$f->getProds();
 ?>
     <section class="cat_product_area section_gap">
         <div class="container">
@@ -30,293 +33,51 @@ else
 
                     <div class="latest_product_inner">
                         <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-product">
-                                    <div class="product-img">
-                                        <img
-                                            class="card-img"
-                                            src="img/prods/1.jpg"
-                                            alt=""
-                                        />
-                                        <div class="p_icon">
-                                            <a href="#">
-                                                <i class="far fa-eye"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="far fa-heart"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product-btm">
-                                        <a href="#" class="d-block">
-                                            <h4>Product N#xxx</h4>
-                                        </a>
-                                        <div class="mt-3">
-                                            <span class="mr-4">25.00 dt/m²</span>
-                                            <del>35.00</del>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                          <?php
+                            foreach ($p as $t)
+                            {
 
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-product">
-                                    <div class="product-img">
-                                        <img
-                                            class="card-img"
-                                            src="img/prods/1.jpg"
-                                            alt=""
-                                        />
-                                        <div class="p_icon">
-                                            <a href="#">
-                                                <i class="far fa-eye"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="far fa-heart"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product-btm">
-                                        <a href="#" class="d-block">
-                                            <h4>Product N#xxx</h4>
-                                        </a>
-                                        <div class="mt-3">
-                                            <span class="mr-4">25.00 dt/m²</span>
-                                            <del>35.00</del>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                              echo '
+                              <div class="col-lg-4 col-md-6">
+                                  <div class="single-product">
+                                      <div class="product-img">
+                                          <img
+                                              class="card-img"
+                                              src="img/prods/'.$t["image"].'"
+                                              alt=""
+                                          />
+                                          <div class="p_icon">
+                                              <a href="#">
+                                                  <i class="far fa-eye"></i>
+                                              </a>
+                                              <a href="#">
+                                                  <i class="far fa-heart"></i>
+                                              </a>
+                                              <form method="post" action="admin/forms.php">
+                                                  <input type="hidden" name="pId" value="'.$t["reference"].'" >
+                                                  <input type="hidden" name="form" value="addCart" >
+                                                  <input type="submit" value="aa"><i class="fas fa-cart-plus"></i>
 
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-product">
-                                    <div class="product-img">
-                                        <img
-                                            class="card-img"
-                                            src="img/prods/1.jpg"
-                                            alt=""
-                                        />
-                                        <div class="p_icon">
-                                            <a href="#">
-                                                <i class="far fa-eye"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="far fa-heart"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product-btm">
-                                        <a href="#" class="d-block">
-                                            <h4>Product N#xxx</h4>
-                                        </a>
-                                        <div class="mt-3">
-                                            <span class="mr-4">25.00 dt/m²</span>
-                                            <del>35.00</del>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                              </form>
 
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-product">
-                                    <div class="product-img">
-                                        <img
-                                            class="card-img"
-                                            src="img/prods/1.jpg"
-                                            alt=""
-                                        />
-                                        <div class="p_icon">
-                                            <a href="#">
-                                                <i class="far fa-eye"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="far fa-heart"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product-btm">
-                                        <a href="#" class="d-block">
-                                            <h4>Product N#xxx</h4>
-                                        </a>
-                                        <div class="mt-3">
-                                            <span class="mr-4">25.00 dt/m²</span>
-                                            <del>35.00</del>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                          </div>
+                                      </div>
+                                      <div class="product-btm">
+                                          <a href="#" class="d-block">
+                                              <h4>'.$t["nom_produit"].'</h4>
+                                          </a>
+                                          <div class="mt-3">
+                                              <span class="mr-4">'.$t["prix"].' dt/m²</span>
 
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-product">
-                                    <div class="product-img">
-                                        <img
-                                            class="card-img"
-                                            src="img/prods/1.jpg"
-                                            alt=""
-                                        />
-                                        <div class="p_icon">
-                                            <a href="#">
-                                                <i class="far fa-eye"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="far fa-heart"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product-btm">
-                                        <a href="#" class="d-block">
-                                            <h4>Product N#xxx</h4>
-                                        </a>
-                                        <div class="mt-3">
-                                            <span class="mr-4">25.00 dt/m²</span>
-                                            <del>35.00</del>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              ';
+                            }
+                           ?>
 
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-product">
-                                    <div class="product-img">
-                                        <img
-                                            class="card-img"
-                                            src="img/prods/1.jpg"
-                                            alt=""
-                                        />
-                                        <div class="p_icon">
-                                            <a href="#">
-                                                <i class="far fa-eye"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="far fa-heart"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product-btm">
-                                        <a href="#" class="d-block">
-                                            <h4>Product N#xxx</h4>
-                                        </a>
-                                        <div class="mt-3">
-                                            <span class="mr-4">25.00 dt/m²</span>
-                                            <del>35.00</del>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-product">
-                                    <div class="product-img">
-                                        <img
-                                            class="card-img"
-                                            src="img/prods/1.jpg"
-                                            alt=""
-                                        />
-                                        <div class="p_icon">
-                                            <a href="#">
-                                                <i class="far fa-eye"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="far fa-heart"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product-btm">
-                                        <a href="#" class="d-block">
-                                            <h4>Product N#xxx</h4>
-                                        </a>
-                                        <div class="mt-3">
-                                            <span class="mr-4">25.00 dt/m²</span>
-                                            <del>35.00</del>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-product">
-                                    <div class="product-img">
-                                        <img
-                                            class="card-img"
-                                            src="img/prods/1.jpg"
-                                            alt=""
-                                        />
-                                        <div class="p_icon">
-                                            <a href="#">
-                                                <i class="far fa-eye"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="far fa-heart"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product-btm">
-                                        <a href="#" class="d-block">
-                                            <h4>Product N#xxx</h4>
-                                        </a>
-                                        <div class="mt-3">
-                                            <span class="mr-4">25.00 dt/m²</span>
-                                            <del>35.00</del>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-product">
-                                    <div class="product-img">
-                                        <img
-                                            class="card-img"
-                                            src="img/prods/1.jpg"
-                                            alt=""
-                                        />
-                                        <div class="p_icon">
-                                            <a href="#">
-                                                <i class="far fa-eye"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="far fa-heart"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i class="fas fa-cart-plus"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product-btm">
-                                        <a href="#" class="d-block">
-                                            <h4>Product N#xxx</h4>
-                                        </a>
-                                        <div class="mt-3">
-                                            <span class="mr-4">25.00 dt/m²</span>
-                                            <del>35.00</del>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

@@ -316,4 +316,70 @@ class fonctionC
             die('Erreur: '.$e->getMessage());
         }
     }
+    function getProds()
+    {
+        $sql="select * from amammou.produit";
+        $db=config::getConnexion();
+        try
+        {
+            return $db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            die('Erreur : '.$e->getMessage());
+        }
+    }
+    function ajouterPanier($p_id)
+    {
+  		$sql="insert into cart (p_id,ip_add,qty) values (:p_id,:ip_add,:qty)";
+  		$db = config::getConnexion();
+  		try
+      {
+          $req=$db->prepare($sql);
+          $ipA=$_SERVER['REMOTE_ADDR'];
+          $qty=1;
+
+      		$req->bindValue(':p_id',$p_id);
+      		$req->bindValue(':ip_add',$ipA);
+      		$req->bindValue(':qty',$qty);
+
+          $req->execute();
+
+
+      }
+
+      catch (Exception $e)
+      {
+          if($e->getCode()==23000)
+          {
+            $sql2="update amammou.cart set qty = qty+1 where p_id='$p_id'";
+            $db = config::getConnexion();
+            try
+            {
+              $db->query($sql2);
+            }
+            catch (Exception $e)
+            {
+              echo 'Error: '.$e->getMessage;
+            }
+
+
+          }
+
+      }
+
+  	}
+    function getCart($ipA)
+    {
+      $sql="select * from amammou.cart where ip_add='$ipA'"
+      try
+      {
+        $db->query($sql);
+      }
+      catch (Exception $e)
+      {
+        echo 'Error: '.$e->getMessage;
+      }
+
+    }
 }

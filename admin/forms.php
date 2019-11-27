@@ -192,3 +192,16 @@ else if($_POST["form"]=="deleteTech")
         echo "ccacac";
     }
 }
+else if($_POST["form"]=="addCart")
+{
+    if (isset($_POST["pId"]))
+    {
+        $u=new fonctionC();
+        $u->ajouterPanier($_POST["pId"]);
+        header("location:../products.php"); 
+    }
+    else
+    {
+        echo "ccacac";
+    }
+}

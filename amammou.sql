@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Nov 27, 2019 at 05:16 PM
--- Server version: 5.7.26
--- PHP Version: 7.2.18
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  mer. 27 nov. 2019 à 18:55
+-- Version du serveur :  5.7.19
+-- Version de PHP :  5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `amammou`
+-- Base de données :  `amammou`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Structure de la table `admin`
 --
 
 DROP TABLE IF EXISTS `admin`;
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin`
+-- Déchargement des données de la table `admin`
 --
 
 INSERT INTO `admin` (`login`, `email`, `pwd`, `status`, `name`) VALUES
@@ -51,7 +51,7 @@ INSERT INTO `admin` (`login`, `email`, `pwd`, `status`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `adresses`
+-- Structure de la table `adresses`
 --
 
 DROP TABLE IF EXISTS `adresses`;
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `adresses` (
 ) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `adresses`
+-- Déchargement des données de la table `adresses`
 --
 
 INSERT INTO `adresses` (`add_id`, `u_uname`, `add_name`, `name`, `street`, `city`, `zip_code`, `state`, `country`, `phone`) VALUES
@@ -80,7 +80,97 @@ INSERT INTO `adresses` (`add_id`, `u_uname`, `add_name`, `name`, `street`, `city
 -- --------------------------------------------------------
 
 --
--- Table structure for table `techs`
+-- Structure de la table `cart`
+--
+
+DROP TABLE IF EXISTS `cart`;
+CREATE TABLE IF NOT EXISTS `cart` (
+  `p_id` int(11) NOT NULL,
+  `ip_add` varchar(255) NOT NULL,
+  `qty` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`p_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `cart`
+--
+
+INSERT INTO `cart` (`p_id`, `ip_add`, `qty`) VALUES
+(2, '::1', 3),
+(1, '::1', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE IF NOT EXISTS `orders` (
+  `IdCommande` int(11) NOT NULL AUTO_INCREMENT,
+  `IdPanier` int(11) NOT NULL,
+  `NomProduit` varchar(20) NOT NULL,
+  `PrixProduit` int(11) NOT NULL,
+  `PrixTotal` int(11) NOT NULL,
+  `Quantite` int(11) NOT NULL,
+  `NomClient` varchar(20) NOT NULL,
+  PRIMARY KEY (`IdCommande`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `orders`
+--
+
+INSERT INTO `orders` (`IdCommande`, `IdPanier`, `NomProduit`, `PrixProduit`, `PrixTotal`, `Quantite`, `NomClient`) VALUES
+(1, 12454545, '', 0, 3, 0, '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `produit`
+--
+
+DROP TABLE IF EXISTS `produit`;
+CREATE TABLE IF NOT EXISTS `produit` (
+  `reference` int(11) NOT NULL AUTO_INCREMENT,
+  `id_categorie` int(11) NOT NULL,
+  `nom_produit` varchar(256) NOT NULL,
+  `description` text NOT NULL,
+  `prix` int(11) NOT NULL,
+  `quantité` int(11) NOT NULL,
+  `image` varchar(256) NOT NULL,
+  `image2` varchar(256) NOT NULL,
+  `image3` varchar(256) NOT NULL,
+  `keyword` varchar(256) NOT NULL,
+  PRIMARY KEY (`reference`)
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `produit`
+--
+
+INSERT INTO `produit` (`reference`, `id_categorie`, `nom_produit`, `description`, `prix`, `quantité`, `image`, `image2`, `image3`, `keyword`) VALUES
+(1, 1, 'prod1', 'salem', 10, 50, '1.jpg', '1.jpg', '1.jpg', 'k1,k2'),
+(2, 1, 'prod2', 'salem', 10, 50, '1.jpg', '1.jpg', '1.jpg', 'k1,k2'),
+(3, 1, 'prod3', 'salem', 10, 50, '1.jpg', '1.jpg', '1.jpg', 'k1,k2'),
+(4, 1, 'prod4', 'salem', 10, 50, '1.jpg', '1.jpg', '1.jpg', 'k1,k2'),
+(5, 1, 'prod5', 'salem', 10, 50, '1.jpg', '1.jpg', '1.jpg', 'k1,k2'),
+(6, 1, 'prod6', 'salem', 10, 50, '1.jpg', '1.jpg', '1.jpg', 'k1,k2'),
+(7, 1, 'prod7', 'salem', 10, 50, '1.jpg', '1.jpg', '1.jpg', 'k1,k2'),
+(8, 1, 'prod8', 'salem', 10, 50, '1.jpg', '1.jpg', '1.jpg', 'k1,k2'),
+(9, 1, 'prod9', 'salem', 10, 50, '1.jpg', '1.jpg', '1.jpg', 'k1,k2'),
+(10, 1, 'prod10', 'salem', 10, 50, '1.jpg', '1.jpg', '1.jpg', 'k1,k2'),
+(11, 1, 'prod11', 'salem', 10, 50, '1.jpg', '1.jpg', '1.jpg', 'k1,k2'),
+(12, 1, 'prod12', 'salem', 10, 50, '1.jpg', '1.jpg', '1.jpg', 'k1,k2'),
+(13, 1, 'prod13', 'salem', 10, 50, '1.jpg', '1.jpg', '1.jpg', 'k1,k2'),
+(14, 1, 'prod14', 'salem', 10, 50, '1.jpg', '1.jpg', '1.jpg', 'k1,k2'),
+(15, 1, 'prod15', 'salem', 10, 50, '1.jpg', '1.jpg', '1.jpg', 'k1,k2'),
+(16, 1, 'prod16', 'salem', 10, 50, '1.jpg', '1.jpg', '1.jpg', 'k1,k2');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `techs`
 --
 
 DROP TABLE IF EXISTS `techs`;
@@ -97,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `techs` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `techs`
+-- Déchargement des données de la table `techs`
 --
 
 INSERT INTO `techs` (`login`, `pwd`, `email`, `tasks_comp`, `available`, `name`) VALUES
@@ -106,7 +196,7 @@ INSERT INTO `techs` (`login`, `pwd`, `email`, `tasks_comp`, `available`, `name`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structure de la table `users`
 --
 
 DROP TABLE IF EXISTS `users`;
@@ -121,7 +211,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`u_uname`, `u_name`, `u_pwd`, `u_email`, `u_phone`) VALUES
