@@ -371,7 +371,8 @@ class fonctionC
   	}
     function getCart($ipA)
     {
-      $sql="select * from amammou.cart where ip_add='$ipA'"
+      $sql="select * from amammou.cart where ip_add='$ipA'";
+      $db= config::getConnexion();
       try
       {
         $db->query($sql);
