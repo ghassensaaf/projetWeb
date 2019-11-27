@@ -150,7 +150,7 @@ $listClient=$t->showUsers();
                                               <label data-error="wrong" data-success="right" for="orangeForm-email">Email</label>
                                               <input type="email" id="orangeForm-email" name="email" class="form-control validate" value="'.$row["u_email"].'">
                                             </div>
-                                    
+
                                             <div class="md-form mb-4">
                                               <label data-error="wrong" data-success="right" for="orangeForm-pass">Phone number</label>
                                               <input type="text" id="orangeForm-pass" name="phone" class="form-control validate" value="'.$row["u_phone"].'">
@@ -166,8 +166,8 @@ $listClient=$t->showUsers();
                                       </div>
                                     </div>
 
-                                    
-                                    
+
+
                                 </td>
                                 <td>
                                     <div class="text-center">
@@ -197,13 +197,13 @@ $listClient=$t->showUsers();
                                           <div class="modal-footer d-flex justify-content-center">
                                             <input type="submit" class="btn btn-danger" value="Confirm">
                                             <input type="button" class="btn btn-success" data-dismiss="modal" aria-label="Close" value="Cancel">
-                                             
+
                                           </div>
                                           </form>
                                         </div>
                                       </div>
                                     </div>
-                                    
+
                                 </td>
                             </tr>
                                 ';
@@ -237,4 +237,3 @@ $listClient=$t->showUsers();
 
 </body>
 </html>
-

@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a5a1fed-1156-454b-8145-b255b12e4d9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/inc/tech.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/aef3b791-8c18-4c39-b9aa-823b04a8079b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/aef3b791-8c18-4c39-b9aa-823b04a8079b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/admins.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admins.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/forms.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/forms.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/logout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/techs.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/techs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/fonctionC.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/fonctionC.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
-    </list>
+    <list default="true" id="4a5a1fed-1156-454b-8145-b255b12e4d9c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +161,7 @@
       <workItem from="1574549931942" duration="2889000" />
       <workItem from="1574679834901" duration="19923000" />
       <workItem from="1574778115618" duration="12320000" />
-      <workItem from="1574845456172" duration="1585000" />
+      <workItem from="1574845456172" duration="1876000" />
     </task>
     <task id="LOCAL-00001" summary="new new">
       <created>1574254758066</created>
@@ -250,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574720384156</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added features to admin section(super admin);&#10;added the tech actor and it's use cases">
+      <created>1574852322874</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1574852322874</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,6 +274,7 @@
     <MESSAGE value="test2" />
     <MESSAGE value="correct 2" />
     <MESSAGE value="daily updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="daily updates" />
+    <MESSAGE value="added features to admin section(super admin);&#10;added the tech actor and it's use cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="added features to admin section(super admin);&#10;added the tech actor and it's use cases" />
   </component>
 </project>
