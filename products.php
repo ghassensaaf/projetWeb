@@ -8,7 +8,7 @@ else
 {
     include "inc/header.php";
 }
-include "inc/fonctionC.php";
+
 $f=new fonctionC();
 $p=$f->getProds();
 ?>
@@ -53,10 +53,10 @@ $p=$f->getProds();
                                               <a href="#">
                                                   <i class="far fa-heart"></i>
                                               </a>
-                                              <form method="post" action="admin/forms.php">
+                                              <form style="display: inline-block;"  method="post" action="admin/forms.php">
                                                   <input type="hidden" name="pId" value="'.$t["reference"].'" >
                                                   <input type="hidden" name="form" value="addCart" >
-                                                  <input type="submit" value="aa"><i class="fas fa-cart-plus"></i>
+                                                  <button id="add-to-cart" type="submit"><i class="fas fa-cart-plus"></i></button>
 
                                               </form>
 
@@ -67,8 +67,8 @@ $p=$f->getProds();
                                               <h4>'.$t["nom_produit"].'</h4>
                                           </a>
                                           <div class="mt-3">
-                                              <span class="mr-4">'.$t["prix"].' dt/m²</span>
-
+                                             <span class="mr-4">'.$t["prix"].' dt/m²</span>
+                                              
                                           </div>
                                       </div>
                                   </div>

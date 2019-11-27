@@ -1,3 +1,8 @@
+<?php
+include 'inc/fonctionC.php';
+$i= new fonctionC();
+$c=$i->getCart(getHostByName(getHostName()));
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -53,7 +58,7 @@
                 <li class=""><a href="index.php">Q/A</a></li>
 
                 <li><a href="login.php"><i class="fas fa-user"></i> <span class="vis-toggle">Login/Signup</span></a></li>
-                <li><a href="cart.php"><i class="fas fa-shopping-basket"></i><span class="vis-toggle">My Shopping bag</span></a><span style="position: absolute;display:inline-block;background-color: #4A8239 ; padding-left:5px;width: 15px; height: 15px; font-size: 9px; color: white  ;border-radius: 50%">1</span></li>
+                <li><a href="cart.php"><i class="fas fa-shopping-basket"></i><span class="vis-toggle">My Shopping bag</span></a><span style="position: absolute;display:inline-block;background-color: #4A8239 ; padding-left:5px;width: 15px; height: 15px; font-size: 9px; color: white  ;border-radius: 50%"><?php echo $c->rowCount()?></span></li>
             </ul>
         </nav>
     </div>

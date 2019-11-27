@@ -1195,7 +1195,24 @@ border: none;
 {
   margin: 5px auto;
 }
-
+#add-to-cart
+{
+  display: inline-block;
+  height: 36px;
+  line-height: 40px;
+  width: 36px;
+  text-align: center;
+  background:#fff;
+  border-radius: 30px;
+  color:#2a2a2a;
+  border: none;
+}
+#add-to-cart:hover
+{
+  background-color: #4A8239;
+  color: #fff;
+  transition: 0.4s;
+}
 /*--------------------------------------------------------------
 # Responsive Media Queries
 --------------------------------------------------------------*/

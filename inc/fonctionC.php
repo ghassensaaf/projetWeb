@@ -331,12 +331,12 @@ class fonctionC
     }
     function ajouterPanier($p_id)
     {
-  		$sql="insert into cart (p_id,ip_add,qty) values (:p_id,:ip_add,:qty)";
+  		$sql="insert into amammou.cart (p_id,ip_add,qty) values (:p_id,:ip_add,:qty)";
   		$db = config::getConnexion();
   		try
       {
           $req=$db->prepare($sql);
-          $ipA=$_SERVER['REMOTE_ADDR'];
+          $ipA=getHostByName(getHostName());
           $qty=1;
 
       		$req->bindValue(':p_id',$p_id);
@@ -360,7 +360,7 @@ class fonctionC
             }
             catch (Exception $e)
             {
-              echo 'Error: '.$e->getMessage;
+              echo 'Error: '.$e->getMessage();
             }
 
 
@@ -375,12 +375,25 @@ class fonctionC
       $db= config::getConnexion();
       try
       {
-        $db->query($sql);
+        return $db->query($sql);
       }
       catch (Exception $e)
       {
         echo 'Error: '.$e->getMessage;
       }
 
+    }
+    function getProd($idP)
+    {
+        $sql="select * from amammou.produit where reference='$idP'";
+        $db=config::getConnexion();
+        try
+        {
+            return $db->query($sql)->fetch();
+        }
+        catch (Exception $e)
+        {
+            echo 'error:'.$e->getMessage();
+        }
     }
 }

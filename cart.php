@@ -27,15 +27,24 @@ else
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <?php
+                                foreach ($c as $row)
+                                {
+                                    $d=$i->getProd($row["p_id"]);
+
+                                    echo '
+                               
                                 <tr>
-                                    <td class="product-thumbnail"><a href="#"><img src="img/prods/1.jpg" width="80px" alt="product img"></a></td>
-                                    <td class="product-name"><a href="#">Natoque penatibus</a></td>
-                                    <td class="product-price"><span class="amount">165.00 TND</span></td>
-                                    <td class="product-quantity"><input type="number" value="1"></td>
-                                    <td class="product-subtotal">165.00 TND  </td>
+                                    <td class="product-thumbnail"><a href="#"><img src="img/prods/'.$d["image"].'" width="80px" alt="product img"></a></td>
+                                    <td class="product-name"><a href="#">'.$d["nom_produit"].'</a></td>
+                                    <td class="product-price"><span class="amount">'.$d["prix"].' TND</span></td>
+                                    <td class="product-quantity"><input type="number" value="'.$row["qty"].'"></td>
+                                    <td class="product-subtotal">'.($d["prix"]*$row["qty"]).'  </td>
                                     <td class="product-remove"><a href="#">X</a></td>
                                 </tr>
-                                
+                                ';
+                                }
+                                ?>
                                 </tbody>
                             </table>
                         </div>
