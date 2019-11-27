@@ -47,7 +47,11 @@ $la=$f->getAdmins();
                 <div class="card">
                     <div class="card-header">
                         <strong class="card-title">Admins List</strong>
-                        <span class="text-center">
+                        <?php
+                        if($_SESSION["status"]==55)
+                        {
+                            echo '
+                                <span class="text-center">
                             <a href="" class="btn-sm btn-primary" data-toggle="modal" data-target="#addAdmin">Add admin</a>
                         </span>
                         <div class="modal fade" id="addAdmin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
@@ -87,6 +91,9 @@ $la=$f->getAdmins();
                                 </div>
                             </div>
                         </div>
+                            ';
+                        }
+                        ?>
                     </div>
 
                     <div class="table-stats order-table ov-h">
@@ -95,12 +102,20 @@ $la=$f->getAdmins();
                             <tr>
                                 <th class="serial">#</th>
                                 <th class="avatar">Avatar</th>
+                                <th>Status</th>
                                 <th>login</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Status</th>
-                                <th>Edit</th>
-                                <th>Edit Status</th>
+                                <?php
+                                if($_SESSION["status"]==55)
+                                {
+                                    echo '
+                                    <th>Edit</th>
+                                    <th>Edit Status</th>
+                                    ';
+                                }
+                                ?>
+
 
                             </tr>
                             </thead>
@@ -117,21 +132,28 @@ $la=$f->getAdmins();
                                             <div class="text-center text-capitalize " style="font-size: xx-large; color: white; padding:2.5% 25%; width: 50px; height: 50px; border-radius: 50%;  background-color: gray;" >'.$a["login"][0].'</div>
                                         </div>
                                     </td>
-                                    <td> '.$a["login"].' </td>
-                                    <td>  <span class="name">'.$a["name"].'</span> </td>
-                                    <td> <span class="email"> '.$a["email"].'</span> </td>
                                     <td>';
                                         if($a["status"]==1)
                                         {
                                             echo '<span class="badge badge-success">Active</span>';
                                         }
+                                        else if($a["status"]==55)
+                                        {
+                                            echo '<span class="badge badge-complete">Super Admin</span>';
+                                        }
                                         else
                                         {
-                                            echo '<span class="badge badge-danger">Suspended</span>';
+                                            echo '<span class="badge badge-pending">Suspended</span>';
                                         }
                                     echo '
                                     </td>
-                                    <td>
+                                    <td> '.$a["login"].' </td>
+                                    <td>  <span class="name">'.$a["name"].'</span> </td>
+                                    <td> <span class="email"> '.$a["email"].'</span> </td>';
+                                        if ($_SESSION["status"]==55)
+                                        {
+                                            echo '
+                                            <td>
                                     <div class="text-center">
                                       <a href="" class="btn-sm btn-warning" data-toggle="modal" data-target="#modalRegisterForm'.$x.'">Edit</a>
                                     </div>
@@ -173,12 +195,16 @@ $la=$f->getAdmins();
 
                                     
                                     
-                                </td>
-                                <td>
+                                    </td>
+                                    <td>
                                     <div class="text-center">';
                                         if($a['status']==1)
                                         {
                                             echo '<a href="" class="btn-sm btn-danger" data-toggle="modal" data-target="#modalRegisterForm'.$x.$x.'">suspend</a>';
+                                        }
+                                        else if($a['status']==55)
+                                        {
+//                                            echo '<a href="" class="btn-sm btn-success" data-toggle="modal" data-target="#modalRegisterForm'.$x.$x.'">activate</a>';
                                         }
                                         else
                                         {
@@ -225,6 +251,11 @@ $la=$f->getAdmins();
                                       </div>
                                     </div>
                                 </td>
+                                            ';
+                                        }
+                                        echo '
+                                        
+                                    
 
                                 </tr>
                                 ';

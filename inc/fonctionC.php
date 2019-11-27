@@ -244,7 +244,7 @@ class fonctionC
         {
             $sql="update amammou.admin set status = 0 where login='$login'";
         }
-        else
+        else if($status==0)
         {
             $sql="update amammou.admin set status = 1 where login='$login'";
         }
@@ -258,5 +258,62 @@ class fonctionC
             echo 'Error: '.$e->getMessage();
         }
 
+    }
+    function addTech($tech)
+    {
+        $sql="insert into amammou.techs (login, pwd, email, name) values (:log,:pw,:em,:na)";
+        $db=config::getConnexion();
+        try
+        {
+            $req=$db->prepare($sql);
+            $req->bindValue(':log',$tech->getLogin());
+            $req->bindValue(':em',$tech->getEmail());
+            $req->bindValue(':pw',md5($tech->getPwd()));
+            $req->bindValue(':na',$tech->getName());
+            $req->execute();
+        }
+        catch (Exception $e)
+        {
+            echo 'Error :'.$e->getMessage();
+        }
+    }
+    function getTechs()
+    {
+        $sql="select * from amammou.techs";
+        $db=config::getConnexion();
+        try
+        {
+            return $db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            die('Erreur : '.$e->getMessage());
+        }
+    }
+    function editTech($login,$name,$email)
+    {
+        $sql="update amammou.techs set name='$name',email='$email' where login='$login'";
+        $db=config::getConnexion();
+        try
+        {
+            $db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            echo 'Error: '.$e->getMessage();
+        }
+    }
+    public function deleteTech($login)
+    {
+        $sql="DELETE FROM amammou.techs WHERE login = '$login' ";
+        $db = config::getConnexion();
+        try
+        {
+            $db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
     }
 }

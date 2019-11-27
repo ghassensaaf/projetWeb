@@ -1,6 +1,7 @@
 <?php
 include '../inc/user.php';
 include 'inc/admin.php';
+include 'inc/tech.php';
 include '../inc/fonctionC.php';
 if($_POST["form"]=="addAdmin")
 {
@@ -31,12 +32,21 @@ else if ($_POST['form']=='adminAuth')
             {
                 $lgdin=true;
 
-                if(($t['login']===$uname) &&($t['pwd']===md5($upass))&&($t['status']==1))
+                if(($t['login']===$uname) &&($t['pwd']===md5($upass))&&($t['status']>0))
                 {
                     session_start();
                     $_SESSION['login']=$t["login"];
                     $_SESSION['mail']=$t["email"];
                     $_SESSION['role']="admin";
+                    if(($t['status']>1))
+                    {
+                        $_SESSION['status']="55";
+                    }
+                    else
+                    {
+                        $_SESSION['status']="1";
+                    }
+
                     header('location:index.php');
                 }
                 else if (($t['login']===$uname) &&($t['pwd']===md5($upass))&&($t['status']==0))
@@ -147,5 +157,38 @@ else if ($_POST["form"]=="editAdd")
     else
     {
         echo "some error adding this shit";
+    }
+}
+else if ($_POST["form"]=="addTech")
+{
+    if(isset($_POST["login"]) and isset($_POST["name"])and isset($_POST["email"])and isset($_POST["pwd"]))
+    {
+        $t=new tech($_POST["login"],$_POST["pwd"],$_POST["email"],$_POST["name"]);
+        $f=new fonctionC();
+        $f->addTech($t);
+        header('location:techs.php');
+
+    }
+}
+else if($_POST["form"]=="editTech")
+{
+    if(isset($_POST['name'])and isset($_POST['email']) and isset($_POST['login']))
+    {
+        $f=new fonctionC();
+        $f->editTech($_POST['login'],$_POST['name'],$_POST['email']);
+        header('location:techs.php');
+    }
+}
+else if($_POST["form"]=="deleteTech")
+{
+    if (isset($_POST["login"]))
+    {
+        $u=new fonctionC();
+        $u->deleteTech($_POST["login"]);
+        header("location:techs.php");
+    }
+    else
+    {
+        echo "ccacac";
     }
 }

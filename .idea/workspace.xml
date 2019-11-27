@@ -2,23 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a5a1fed-1156-454b-8145-b255b12e4d9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/forms.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/inc/tech.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/aef3b791-8c18-4c39-b9aa-823b04a8079b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/aef3b791-8c18-4c39-b9aa-823b04a8079b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addAdd.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/addAdmin.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/adminAuth.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/admins.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admins.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/deleteUser.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/editAdmin.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/editStatus.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/editUser.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adresses.php" beforeDir="false" afterPath="$PROJECT_DIR$/adresses.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deleteAdd.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/editAdd.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/forms.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/forms.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/techs.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/techs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/fonctionC.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/fonctionC.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,21 +55,7 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="amammou: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="admin: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="amammou: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="adresses: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="amammou: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="users: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="techs: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -113,7 +91,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/inc" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -150,7 +128,7 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@868d8610" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@7ef8117f" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -191,7 +169,9 @@
       <workItem from="1574540065185" duration="35000" />
       <workItem from="1574545348343" duration="296000" />
       <workItem from="1574549931942" duration="2889000" />
-      <workItem from="1574679834901" duration="15816000" />
+      <workItem from="1574679834901" duration="19923000" />
+      <workItem from="1574778115618" duration="12320000" />
+      <workItem from="1574845456172" duration="1585000" />
     </task>
     <task id="LOCAL-00001" summary="new new">
       <created>1574254758066</created>
@@ -263,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574717520343</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="daily updates">
+      <created>1574720384156</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1574720384156</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
