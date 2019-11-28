@@ -90,69 +90,26 @@ $d=$i->getProds(6);
             <div class="news-container">
                 <div class="container">
                     <div class="row">
+                        <?php
+
+                        foreach ($d as $p)
+                        {
+
+                            echo '
                         <div class="col-sm">
                             <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="img/prods/1.jpg" alt="Card image cap">
+                                <img class="card-img-top" src="img/prods/'.$p["image"].'" alt="Card image cap">
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    <h5 class="card-title">'.$p["nom_produit"].'</h5>
+                                    <p class="card-text">'.$p["description"].'</p>
+                                    <a href="#" class="btn btn-primary"><i class="fa fa-eye" ></i> view</a>
+                                    <a style="position: absolute; right: 5%" href="#" class="btn btn-primary"><i class="fas fa-cart-plus"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm">
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="img/prods/1.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm">
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="img/prods/1.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm">
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="img/prods/1.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm">
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="img/prods/1.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm">
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="img/prods/1.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        ';
+                        }
+                        ?>
                 </div>
                 <div class="container view-all">
                     <a style="float: right; margin-right: 100px;margin-top: 1%" href="products.php"> >> view all</a>

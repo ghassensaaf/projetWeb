@@ -318,7 +318,7 @@ class fonctionC
     }
     function getProds($l=null)
     {
-        $sql="select * from amammou.produit ";
+        $sql="select * from amammou.produit ORDER BY reference DESC";
         if($l!=null)
         {
             $sql=$sql." limit $l";
