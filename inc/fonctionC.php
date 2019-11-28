@@ -464,5 +464,14 @@ class fonctionC
         {
             echo 'error :'.$e->getMessage();
         }
+        $sql3="delete * from amammou.cart where ip_add='$ipA'";
+        try
+        {
+            $db->query($sql3);
+        }
+        catch (Exception $e)
+        {
+            echo 'error :'.$e->getMessage();
+        }
     }
 }
