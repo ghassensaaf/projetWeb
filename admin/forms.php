@@ -233,3 +233,12 @@ else if($_POST["form"]=="updateCart")
         echo "ccacac";
     }
 }
+else if($_POST["form"]=="addOrder")
+{
+    echo"7ad hna";
+    if(isset($_POST["uname"]) and isset($_POST["addId"]))
+    {
+        $f=new fonctionC();
+        $f->addFromCart($_POST["uname"],$_POST["addId"]);
+    }
+}

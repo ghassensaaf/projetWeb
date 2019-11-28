@@ -427,42 +427,42 @@ class fonctionC
             echo 'error: '.$e->getMessage();
         }
     }
-    function addFromCart()
+    function addFromCart($uname,$idAdd)
     {
-        $sql="insert into amammou.prods_commande (idProduit, qty) values (:idP,:qty)";
-        $db=config::getConnexion();
+        $ipA=gethostbyname(gethostname());
+        $l=$this->getCart($ipA);
+        $x=random_int(1000000,9999999);
+        $v=0;
+        $n=0;
+        foreach ($l as $p)
+        {
+            $pId=$p["p_id"];
+            $qty=$p["qty"];
+            $prod=$this->getProd($pId);
+            $v=$v+$prod["prix"]*$qty;
+            $n=$n+$qty;
+
+            $sql="insert into amammou.pending_orders (uname, innoNumb, prodId,idAdd, qty) values ('$uname','$x','$pId','$idAdd','$qty')";
+            $db=config::getConnexion();
+            try
+            {
+                $db->query($sql);
+            }
+            catch (Exception $e)
+            {
+                echo 'error :'.$e->getMessage();
+            }
+
+
+        }
+        $sql2="insert into amammou.orders (uname, dueAmount, innoNumber, totalQty, idAdd) values ('$uname','$v','$x','$n','$idAdd')";
         try
         {
-            $db->query($sql);
+            $db->query($sql2);
         }
         catch (Exception $e)
         {
-            echo 'error: '.$e->getMessage();
+            echo 'error :'.$e->getMessage();
         }
     }
-    function ajouterCommande($idClient,$idAdd,$idProds,$qty,$prixT)
-    {
-        $sql="insert into amammou.orders (idClient, idAdd, idProds, quantite, prixTotal) values (:idCli,:idAd,:idProds,:qty,:px)";
-        $db = config::getConnexion();
-    	try
-    	{
-    			$req=$db->prepare($sql);
-
-    			$req->bindValue(':idCli',$idClient);
-    			$req->bindValue(':idAd',$idAdd);
-    			$req->bindValue(':idProds',$idProds);
-    			$req->bindValue(':qty',$qty);
-    			$req->bindValue(':px',$prixT);
-
-
-    			$req->execute();
-
-
-    	}
-    	catch ( Exception $e)
-        {
-            echo 'error : '.$e->getMessage();
-        }
-    }
-
 }

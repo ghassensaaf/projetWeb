@@ -10,14 +10,15 @@ $add=$i->showAdress($_SESSION["uname"]);
 
 <main>
     <div class="container">
+        <form method="post" action="admin/forms.php">
         <div style="margin: 10% auto;" class="row">
-            <div style="box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.4); background-color:white;border: 1px solid gray" class="col-lg-8 col-md-12">
-                <form action="">
+            <div style="box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.4); background-color:white;border: 2px solid gray" class="col-lg-8 col-md-12">
+
                     <section id="checkout-addresses-step" class="">
                         <h1 class="mb-3 mt-2 step-title text-center h3"><i class="fa fa-home"></i><span class="step-number"></span> Adresses</h1>
                         <div class="content">
                             <div class="js-address-form">
-                                <form method="POST" action="https://www.tunisianet.com.tn/commande" data-refresh-url="//www.tunisianet.com.tn/commande?ajax=1&amp;action=addressForm">
+
                                     <p class="m-3 text-center">
                                         L'adresse sélectionnée sera utilisée à la fois comme adresse personnelle (pour la facturation) et comme adresse de livraison.
                                     </p>
@@ -30,7 +31,7 @@ $add=$i->showAdress($_SESSION["uname"]);
                                                     <header style="background-color: lightgrey; border-radius: 25px; " class="h4">
                                                         <label class="radio-block">
                                                             <span class="custom-radio">
-                                                              <input type="radio" name="deliveryAdd" value="" checked="">
+                                                              <input type="radio" name="addId" value="'.$ad["add_id"].'">
                                                               <span></span>
                                                             </span>
                                                             <span class="address-alias h5">'.$ad["add_name"].'</span>
@@ -42,21 +43,23 @@ $add=$i->showAdress($_SESSION["uname"]);
                                             ?>
                                             <hr>
                                             <footer class="address-footer">
+                                                <input type="hidden" name="form" value="addOrder">
+                                                <input type="hidden" name="uname" value="<?php echo $_SESSION["uname"]; ?>">
+
                                                 <a href="adresses.php" ><i class="fa fa-edit"></i> Edit Or Add adress</a>
                                                 <button type="submit" class="btn-sm btn-success" style="float: right;">Confirm Order</button>
                                             </footer>
                                         </article>
 
 
-
-                                </form>
+                                        
                             </div>
 
                         </div>
                     </section>
-                </form>
+
             </div>
-            <div style="box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.4); background-color:white;border: 1px solid gray" class=" col-lg-4 col-md-12">
+            <div style="box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.4); background-color:white;border: 2px solid gray;" class="col-lg-4 col-md-12">
                 <?php
                     $x=0;foreach ($c as $item) {$x=$x+$item["qty"];}
                     $q=$i->getCart(getHostByName(getHostName()));
@@ -95,6 +98,7 @@ $add=$i->showAdress($_SESSION["uname"]);
 
         </div>
     </div>
+    </form>
 </main>
 <?php
 include "inc/footer.php";
