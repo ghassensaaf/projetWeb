@@ -427,27 +427,42 @@ class fonctionC
             echo 'error: '.$e->getMessage();
         }
     }
-    function ajouterCommande($idCommande)
+    function addFromCart()
     {
-    		$sql="insert into amammou.cart (idCommande,idProduit,nomProduit,prixProduit,prixTotal,quantite,idClient,idAdd) values (:idCommande,:idProduit,:nomProduit,:prixProduit,:prixTotal,:quantite,:idClient,:idAdd)";
-    	  $db = config::getConnexion();
+        $sql="insert into amammou.prods_commande (idProduit, qty) values (:idP,:qty)";
+        $db=config::getConnexion();
+        try
+        {
+            $db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            echo 'error: '.$e->getMessage();
+        }
+    }
+    function ajouterCommande($idClient,$idAdd,$idProds,$qty,$prixT)
+    {
+        $sql="insert into amammou.orders (idClient, idAdd, idProds, quantite, prixTotal) values (:idCli,:idAd,:idProds,:qty,:px)";
+        $db = config::getConnexion();
     	try
     	{
     			$req=$db->prepare($sql);
-    			$quantite=1;
 
-    			$req->bindValue(':idCommande',$idC);
-    			$req->bindValue(':idProduit',$idP);
-    			$req->bindValue(':nomProduit',$nP);
-    			$req->bindValue(':prixProduit',$pP);
-    			$req->bindValue(':prixTotal',$pT);
-    			$req->bindValue(':quantite',$quantite);
-    			$req->bindValue(':idClient',$nC);
-    			$req->bindValue(':idAdd',idA);
+    			$req->bindValue(':idCli',$idClient);
+    			$req->bindValue(':idAd',$idAdd);
+    			$req->bindValue(':idProds',$idProds);
+    			$req->bindValue(':qty',$qty);
+    			$req->bindValue(':px',$prixT);
+
 
     			$req->execute();
 
 
     	}
+    	catch ( Exception $e)
+        {
+            echo 'error : '.$e->getMessage();
+        }
+    }
 
 }
