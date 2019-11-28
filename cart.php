@@ -77,7 +77,7 @@ else
                         <ul class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
                             <li><a href="#">Coupon Code</a></li>
                             <li><a href="#">Apply Code</a></li>
-                            <li><a href="#">Check Out</a></li>
+                            <li><a href="checkout.php">Check Out</a></li>
                         </ul>
                     </div>
                 </div>
