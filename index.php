@@ -8,7 +8,7 @@ else
 {
     include "inc/header.php";
 }
-
+$d=$i->getProds(6);
 ?>
 
     <main id="main">

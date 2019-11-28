@@ -220,3 +220,16 @@ else if($_POST["form"]=="deleteCart")
         echo "ccacac";
     }
 }
+else if($_POST["form"]=="updateCart")
+{
+    if (isset($_POST["pId"]) and  isset($_POST["qty"]))
+    {
+        $u=new fonctionC();
+        $u->updateCart($_POST["pId"],$_POST["qty"]);
+        header("location:../cart.php");
+    }
+    else
+    {
+        echo "ccacac";
+    }
+}

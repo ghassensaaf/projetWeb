@@ -2,29 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a5a1fed-1156-454b-8145-b255b12e4d9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/img/prods/10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/prods/11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/prods/12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/prods/13.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/prods/14.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/prods/15.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/prods/16.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/prods/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/prods/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/prods/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/prods/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/prods/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/prods/7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/prods/8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/prods/9.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/account.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/forms.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/forms.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adresses.php" beforeDir="false" afterPath="$PROJECT_DIR$/adresses.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/fonctionC.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/fonctionC.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/headerCon.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/headerCon.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/panier.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/panier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -146,12 +128,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@7ef8117f" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -193,7 +170,7 @@
       <workItem from="1574679834901" duration="19923000" />
       <workItem from="1574778115618" duration="12320000" />
       <workItem from="1574845456172" duration="1876000" />
-      <workItem from="1574877206087" duration="13105000" />
+      <workItem from="1574877206087" duration="15117000" />
     </task>
     <task id="LOCAL-00001" summary="new new">
       <created>1574254758066</created>

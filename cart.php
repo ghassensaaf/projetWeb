@@ -50,7 +50,14 @@ else
                                     <td class="product-thumbnail"><a href="#"><img src="img/prods/'.$d["image"].'" width="80px" alt="product img"></a></td>
                                     <td class="product-name"><a href="#">'.$d["nom_produit"].'</a></td>
                                     <td class="product-price"><span class="amount">'.$d["prix"].' TND</span></td>
-                                    <td class="product-quantity"><input type="number" value="'.$row["qty"].'"></td>
+                                    <td class="product-quantity">
+                                        <form action="admin/forms.php" method="post">
+                                            <input min="1" type="number" name="qty" value="'.$row["qty"].'">
+                                            <input type="hidden" name="pId" value="'.$row["p_id"].'">
+                                            <input type="hidden" name="form" value="updateCart" >
+                                            <button  type="submit" class="btn btn-outline-success"><i class="fa fa-angle-double-right"></i></button>
+                                        </form>
+                                    </td>
                                     <td class="product-subtotal">'.($d["prix"]*$row["qty"]).'</td>
                                     <td class="product-remove">
                                         <form action="admin/forms.php" method="post">
@@ -70,7 +77,6 @@ else
                         <ul class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
                             <li><a href="#">Coupon Code</a></li>
                             <li><a href="#">Apply Code</a></li>
-                            <li><a href="#">Update Cart</a></li>
                             <li><a href="#">Check Out</a></li>
                         </ul>
                     </div>

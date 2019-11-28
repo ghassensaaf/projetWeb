@@ -305,7 +305,7 @@ class fonctionC
     }
     public function deleteTech($login)
     {
-        $sql="DELETE FROM amammou.techs WHERE login = '$login' ";
+        $sql="DELETE FROM amammou.techs WHERE login = '$login'";
         $db = config::getConnexion();
         try
         {
@@ -316,9 +316,13 @@ class fonctionC
             die('Erreur: '.$e->getMessage());
         }
     }
-    function getProds()
+    function getProds($l=null)
     {
-        $sql="select * from amammou.produit";
+        $sql="select * from amammou.produit ";
+        if($l!=null)
+        {
+            $sql=$sql." limit $l";
+        }
         $db=config::getConnexion();
         try
         {
@@ -408,6 +412,19 @@ class fonctionC
         catch (Exception $e)
         {
             echo 'error:'.$e->getMessage();
+        }
+    }
+    function updateCart($idP,$qty)
+    {
+        $sql="update amammou.cart set qty='$qty' where p_id='$idP'";
+        $db=config::getConnexion();
+        try
+        {
+            $db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            echo 'error: '.$e->getMessage();
         }
     }
 }
