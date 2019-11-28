@@ -1,5 +1,7 @@
 <?php
 include '../inc/user.php';
+include '../inc/panier.php';
+include '../inc/commande.php';
 include 'inc/admin.php';
 include 'inc/tech.php';
 include '../inc/fonctionC.php';
@@ -198,7 +200,20 @@ else if($_POST["form"]=="addCart")
     {
         $u=new fonctionC();
         $u->ajouterPanier($_POST["pId"]);
-        header("location:../products.php"); 
+        header("location:../products.php");
+    }
+    else
+    {
+        echo "ccacac";
+    }
+}
+else if($_POST["form"]=="deleteCart")
+{
+    if (isset($_POST["pId"]))
+    {
+        $u=new fonctionC();
+        $u->deleteCart($_POST["pId"]);
+        header("location:../cart.php");
     }
     else
     {

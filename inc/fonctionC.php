@@ -396,4 +396,18 @@ class fonctionC
             echo 'error:'.$e->getMessage();
         }
     }
+    function deleteCart($idP)
+    {
+        $ipA=getHostByName(getHostName());
+        $sql="delete from amammou.cart where ip_add='$ipA' and p_id='$idP'";
+        $db=config::getConnexion();
+        try
+        {
+            $db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            echo 'error:'.$e->getMessage();
+        }
+    }
 }

@@ -13,7 +13,6 @@ else
         <div class="container cart-container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 ol-lg-12">
-                    <form action="#">
                         <div class="table-content wnro__table table-responsive">
                             <table>
                                 <thead>
@@ -28,10 +27,23 @@ else
                                 </thead>
                                 <tbody>
                                 <?php
+                                $v=0;
+                                if($c->rowCount()==0)
+                                {
+                                    echo '
+                                    <tr>
+                                        <td colspan="6"><h3>there are no items in your cart</h3></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6"><h3>Go to <a href="products.php">shop</a></h3></td>
+                                    </tr>
+                                    ';
+                                }
                                 foreach ($c as $row)
                                 {
                                     $d=$i->getProd($row["p_id"]);
 
+                                    $v=$v+$d["prix"]*$row["qty"];
                                     echo '
                                
                                 <tr>
@@ -39,8 +51,14 @@ else
                                     <td class="product-name"><a href="#">'.$d["nom_produit"].'</a></td>
                                     <td class="product-price"><span class="amount">'.$d["prix"].' TND</span></td>
                                     <td class="product-quantity"><input type="number" value="'.$row["qty"].'"></td>
-                                    <td class="product-subtotal">'.($d["prix"]*$row["qty"]).'  </td>
-                                    <td class="product-remove"><a href="#">X</a></td>
+                                    <td class="product-subtotal">'.($d["prix"]*$row["qty"]).'</td>
+                                    <td class="product-remove">
+                                        <form action="admin/forms.php" method="post">
+                                            <input type="hidden" name="pId" value="'.$row["p_id"].'">
+                                            <input type="hidden" name="form" value="deleteCart" >
+                                            <button style="width: 40%;" type="submit" class="btn btn-outline-danger">X</button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 ';
                                 }
@@ -48,7 +66,6 @@ else
                                 </tbody>
                             </table>
                         </div>
-                    </form>
                     <div class="cartbox__btn">
                         <ul class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
                             <li><a href="#">Coupon Code</a></li>
@@ -68,13 +85,13 @@ else
                                 <li>Sub Total</li>
                             </ul>
                             <ul class="cart__total__tk">
-                                <li>70 TND</li>
-                                <li>70 TND</li>
+                                <li><?php echo $v?> TND</li>
+                                <li>0 TND</li>
                             </ul>
                         </div>
                         <div class="cart__total__amount">
                             <span>Grand Total</span>
-                            <span>140 TND</span>
+                            <span><?php echo $v?> TND</span>
                         </div>
                     </div>
                 </div>

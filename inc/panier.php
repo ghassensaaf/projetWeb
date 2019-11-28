@@ -1,6 +1,4 @@
 <?PHP
-include "../config.php";
-
 class Panier{
 	private $p_id;
 	private $ip_add;
