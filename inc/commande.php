@@ -1,65 +1,72 @@
 <?PHP
 class Commande{
-	private $IdCommande;
-	private $IdPanier;
-	private $NomProduit;
-	private $PrixProduit;
-	private $PrixTotal;
-	private $Quantite;
-	private $NomClient;
+	private $idCommande;
+	private $idClient;
+	private $idAdd;
+	private $idProduit;
+	private $nomProduit;
+	private $prixProduit;
+	private $quantite;
+	private $prixTotal;
 
-	function __construct($IdPanier,$NomProduit,$PrixProduit,$PrixTotal,$Quantite,$NomClient){
-		$this->IdPanier=$IdPanier;
-		$this->NomProduit=$NomProduit;
-		$this->PrixProduit=$PrixProduit;
-		$this->PrixTotal=$PrixTotal;
-		$this->Quantite=$Quantite;
-		$this->NomClient=$NomClient;
+
+	function __construct($idClient,$idAdd,$idProduit,$nomProduit,$prixProduit,$quantite,$prixTotal){
+		$this->idClient=$idClient;
+		$this->idAdd=$idAdd;
+		$this->idProduit=$idProduit;
+		$this->nomProduit=$nomProduit;
+		$this->prixProduit=$prixProduit;
+		$this->quantite=$quantite;
+		$this->prixTotal=$prixTotal;
+
+
 
 	}
+	function getnomClient(){
+		return $this->idClient;
+	}
+	function getidCommande(){
+		return $this->idAdd;
+	}
+	function getidPanier(){
+		return $this->idProduit;
+	}
+	function getnomProduit(){
+		return $this->nomProduit;
+	}
+	function getprixProduit(){
+		return $this->prixProduit;
+	}
+	function getprixTotal(){
+		return $this->quantite;
+	}
+	function getquantite(){
+		return $this->prixTotal;
+	}
 
-	function getNomClient(){
-		return $this->NomClient;
+	function setidCommande($idCommande){
+		$this->idCommande=$idCommande;
 	}
-	function getIdCommande(){
-		return $this->IdCommande;
+	function setidPanier($idClient){
+		$this->idClient;
 	}
-	function getIdPanier(){
-		return $this->IdPanier;
+	function setnomProduit($idAdd){
+		$this->idAdd=$idAdd;
 	}
-	function getNomProduit(){
-		return $this->NomProduit;
+	function setprixProduit($idProduit){
+		$this->idProduit=$idProduit;
 	}
-	function getPrixProduit(){
-		return $this->PrixProduit;
+	function setprixTotal($nomProduit){
+		$this->nomProduit=$nomProduit;
 	}
-	function getPrixTotal(){
-		return $this->PrixTotal;
+	function setquantite($prixProduit){
+		$this->prixProduit=$prixProduit;
 	}
-	function getQuantite(){
-		return $this->Quantite;
+	function setnomClient($quantite){
+		$this->quantite=$quantite;
 	}
-
-	function setIdCommande($IdCommande){
-		$this->IdCommande=$IdCommande;
-	}
-	function setIdPanier($IdPanier){
-		$this->IdPanier;
-	}
-	function setNomProduit($NomProduit){
-		$this->NomProduit=$NomProduit;
-	}
-	function setPrixProduit($PrixProduit){
-		$this->PrixProduit=$PrixProduit;
-	}
-	function setPrixTotal($PrixTotal){
-		$this->PrixTotal=$PrixTotal;
-	}
-	function setQuantite($Quantite){
-		$this->Quantite=$Quantite;
-	}
-	function setNomClient($NomClient){
-		$this->NomClient=$NomClient;
+	function setnomClient($prixTotal){
+		$this->prixTotal=$prixTotal;
 	}
 
 }
