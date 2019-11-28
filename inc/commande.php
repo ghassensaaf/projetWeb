@@ -65,9 +65,7 @@ class Commande{
 	function setnomClient($quantite){
 		$this->quantite=$quantite;
 	}
-	function setnomClient($prixTotal){
-		$this->prixTotal=$prixTotal;
-	}
+	
 
 }
 

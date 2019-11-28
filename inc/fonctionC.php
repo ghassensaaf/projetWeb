@@ -427,4 +427,27 @@ class fonctionC
             echo 'error: '.$e->getMessage();
         }
     }
+    function ajouterCommande($idCommande)
+    {
+    		$sql="insert into amammou.cart (idCommande,idProduit,nomProduit,prixProduit,prixTotal,quantite,idClient,idAdd) values (:idCommande,:idProduit,:nomProduit,:prixProduit,:prixTotal,:quantite,:idClient,:idAdd)";
+    	  $db = config::getConnexion();
+    	try
+    	{
+    			$req=$db->prepare($sql);
+    			$quantite=1;
+
+    			$req->bindValue(':idCommande',$idC);
+    			$req->bindValue(':idProduit',$idP);
+    			$req->bindValue(':nomProduit',$nP);
+    			$req->bindValue(':prixProduit',$pP);
+    			$req->bindValue(':prixTotal',$pT);
+    			$req->bindValue(':quantite',$quantite);
+    			$req->bindValue(':idClient',$nC);
+    			$req->bindValue(':idAdd',idA);
+
+    			$req->execute();
+
+
+    	}
+
 }
