@@ -459,6 +459,7 @@ class fonctionC
 
 
     	}
+<<<<<<< HEAD
     	catch ( Exception $e)
         {
             echo 'error : '.$e->getMessage();
@@ -466,3 +467,6 @@ class fonctionC
     }
 
 }
+=======
+    }
+>>>>>>> 2fd8b1863256a956a80f8bf4fe56e0c80ca8748f
