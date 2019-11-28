@@ -333,6 +333,7 @@ class fonctionC
             die('Erreur : '.$e->getMessage());
         }
     }
+    // aaa
     function ajouterPanier($p_id)
     {
   		$sql="insert into amammou.cart (p_id,ip_add,qty) values (:p_id,:ip_add,:qty)";
@@ -373,6 +374,7 @@ class fonctionC
       }
 
   	}
+      // aaa tekhou prouit men panier
     function getCart($ipA)
     {
       $sql="select * from amammou.cart where ip_add='$ipA'";
@@ -387,6 +389,7 @@ class fonctionC
       }
 
     }
+      // aaa te5ou produit kahaw bel id mte3ou
     function getProd($idP)
     {
         $sql="select * from amammou.produit where reference='$idP'";
@@ -400,6 +403,7 @@ class fonctionC
             echo 'error:'.$e->getMessage();
         }
     }
+      // aaa tfasse5 prduit mel panier
     function deleteCart($idP)
     {
         $ipA=getHostByName(getHostName());
@@ -414,6 +418,7 @@ class fonctionC
             echo 'error:'.$e->getMessage();
         }
     }
+      // aaa tbadel qtt fel panier
     function updateCart($idP,$qty)
     {
         $sql="update amammou.cart set qty='$qty' where p_id='$idP'";
@@ -427,6 +432,7 @@ class fonctionC
             echo 'error: '.$e->getMessage();
         }
     }
+      // aaa ajouter commande   , ta3ti lkol prod num fatoura(inooNumber) w ta3tih lel commande bch tnajem tchouf les produits l mawjoudin fel fatoua
     function addFromCart($uname,$idAdd)
     {
         $ipA=gethostbyname(gethostname());
@@ -441,7 +447,7 @@ class fonctionC
             $prod=$this->getProd($pId);
             $v=$v+$prod["prix"]*$qty;
             $n=$n+$qty;
-
+            // ta3ti num fatoura lkol produit fel panier
             $sql="insert into amammou.pending_orders (uname, innoNumb, prodId,idAdd, qty) values ('$uname','$x','$pId','$idAdd','$qty')";
             $db=config::getConnexion();
             try
@@ -455,6 +461,7 @@ class fonctionC
 
 
         }
+          // aaa ta3mel commande fiha num el fatoura
         $sql2="insert into amammou.orders (uname, dueAmount, innoNumber, totalQty, idAdd) values ('$uname','$v','$x','$n','$idAdd')";
         try
         {
