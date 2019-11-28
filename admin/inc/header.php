@@ -89,7 +89,7 @@
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-table"></i><a href="tables-data.html">Categories</a></li>
                             <li><i class="fa fa-table"></i><a href="tables-basic.html">Prods</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">Orders</a></li>
+                            <li><i class="fa fa-table"></i><a href="orders.php">Orders</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">

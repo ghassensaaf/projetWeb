@@ -62,9 +62,17 @@ class fonctionC
             die('Erreur: '.$e->getMessage());
         }
     }
-    function showAdress($uname)
+    function showAdress($uname,$addid=null)
     {
-        $sql="select * from amammou.adresses where u_uname='$uname' ORDER BY add_id ASC";
+        if($addid==null)
+        {
+            $sql="select * from amammou.adresses where u_uname='$uname' ORDER BY add_id ASC";
+        }
+        else
+        {
+            $sql="select * from amammou.adresses where u_uname='$uname'and add_id='$addid' ORDER BY add_id ASC";
+        }
+
         $db = config::getConnexion();
         try
         {
@@ -434,30 +442,30 @@ class fonctionC
     }
       // aaa ajouter commande   , ta3ti lkol prod num fatoura(inooNumber) w ta3tih lel commande bch tnajem tchouf les produits l mawjoudin fel fatoua
     function addFromCart($uname,$idAdd)
-    {
-        $ipA=gethostbyname(gethostname());
-        $l=$this->getCart($ipA);
-        $x=random_int(1000000,9999999);
-        $v=0;
-        $n=0;
-        foreach ($l as $p)
         {
-            $pId=$p["p_id"];
-            $qty=$p["qty"];
-            $prod=$this->getProd($pId);
-            $v=$v+$prod["prix"]*$qty;
-            $n=$n+$qty;
-            // ta3ti num fatoura lkol produit fel panier
-            $sql="insert into amammou.pending_orders (uname, innoNumb, prodId,idAdd, qty) values ('$uname','$x','$pId','$idAdd','$qty')";
-            $db=config::getConnexion();
-            try
+            $ipA=gethostbyname(gethostname());
+            $l=$this->getCart($ipA);
+            $x=random_int(1000000,9999999);
+            $v=0;
+            $n=0;
+            foreach ($l as $p)
             {
-                $db->query($sql);
-            }
-            catch (Exception $e)
-            {
-                echo 'error :'.$e->getMessage();
-            }
+                $pId=$p["p_id"];
+                $qty=$p["qty"];
+                $prod=$this->getProd($pId);
+                $v=$v+$prod["prix"]*$qty;
+                $n=$n+$qty;
+                // ta3ti num fatoura lkol produit fel panier
+                $sql="insert into amammou.pending_orders (uname, innoNumb, prodId,idAdd, qty) values ('$uname','$x','$pId','$idAdd','$qty')";
+                $db=config::getConnexion();
+                try
+                {
+                    $db->query($sql);
+                }
+                catch (Exception $e)
+                {
+                    echo 'error :'.$e->getMessage();
+                }
 
 
         }
@@ -471,10 +479,44 @@ class fonctionC
         {
             echo 'error :'.$e->getMessage();
         }
-        $sql3="delete * from amammou.cart where ip_add='$ipA'";
+        $sql3="delete from amammou.cart where ip_add='$ipA'";
         try
         {
             $db->query($sql3);
+        }
+        catch (Exception $e)
+        {
+            echo 'error :'.$e->getMessage();
+        }
+    }
+    function getOrders($uname=null)
+    {
+        if ($uname==null)
+        {
+            $sql="select * from amammou.orders  order by OrderDate desc";
+        }
+        else
+        {
+            $sql="select * from amammou.orders where uname='$uname' order by OrderDate desc";
+        }
+
+        $db=config::getConnexion();
+        try
+        {
+            return $db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            echo 'error :'.$e->getMessage();
+        }
+    }
+    function getOrderProds($inno)
+    {
+        $sql="select * from amammou.pending_orders where innoNumb='$inno'";
+        $db=config::getConnexion();
+        try
+        {
+            return $db->query($sql);
         }
         catch (Exception $e)
         {

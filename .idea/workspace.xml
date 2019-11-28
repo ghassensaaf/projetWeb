@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a5a1fed-1156-454b-8145-b255b12e4d9c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/admin/orderDet.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/orders.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orderDet.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/inc/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/inc/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adresses.php" beforeDir="false" afterPath="$PROJECT_DIR$/adresses.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/fonctionC.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/fonctionC.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/headerCon.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/headerCon.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/orders.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -193,7 +201,7 @@
       <workItem from="1574679834901" duration="19923000" />
       <workItem from="1574778115618" duration="12320000" />
       <workItem from="1574845456172" duration="1876000" />
-      <workItem from="1574877206087" duration="38274000" />
+      <workItem from="1574877206087" duration="52748000" />
     </task>
     <task id="LOCAL-00001" summary="new new">
       <created>1574254758066</created>
@@ -279,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574852322874</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added features to admin section(super admin);&#10;added the tech actor and it's use cases">
+      <created>1574956148223</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1574956148223</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

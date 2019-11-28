@@ -17,6 +17,7 @@ $c=$i->getCart(getHostByName(getHostName()));
     <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap" rel="stylesheet">
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+<!--    <link href="admin/assets/css/style.css" rel="stylesheet">-->
     <link href="css/steel.css" rel="stylesheet">
 
 </head>
@@ -64,7 +65,7 @@ $c=$i->getCart(getHostByName(getHostName()));
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="adresses.php">My Adresses</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">My Orders</a>
+                        <a class="dropdown-item" href="orders.php">My Orders</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="logout.php">Logout</a>
 

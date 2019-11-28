@@ -31,7 +31,7 @@ echo '
                     <p class="card-text">'.$ad["state"].', '.$ad["country"].'</p>
                     <p class="card-text">'.$ad["phone"].'</p>
                     <hr>
-                    <a href="#" class="card-link" data-toggle="modal" data-target="#modalRegisterForm'.$x.'">Edit Adress</a>
+                    <a href="#" class="card-link" data-toggle="modal" data-target="#modalRegisterForm'.$x.'"> <i class="fa fa-edit"></i> Edit Adress</a>
                     <div class="modal fade" id="modalRegisterForm'.$x.'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -68,7 +68,7 @@ echo '
                                             <select class="form-control" name="state" id="state">
                                                 <option value="Tunis"';if($ad["state"]=="Tunis"){echo "selected";};echo'>Tunis</option>
                                                 <option value="Ariana"';if($ad["state"]=="Ariana"){echo "selected";};echo'>Ariana</option>
-                                                <option value="Ben Arous"';if($ad["state"]=="Ban Arous"){echo "selected";};echo'>Ben Arous</option>
+                                                <option value="Ben Arous"';if($ad["state"]=="Ben Arous"){echo "selected";};echo'>Ben Arous</option>
                                                 <option value="Manouba"';if($ad["state"]=="Manouba"){echo "selected";};echo'>Manouba</option>
                                                 <option value="Nabeul"';if($ad["state"]=="Nabeul"){echo " selected";};echo'>Nabeul</option>
                                                 <option value="Zaghouan"';if($ad["state"]=="Zaghouan"){echo "selected";};echo'>Zaghouan</option>
@@ -116,7 +116,7 @@ echo '
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="card-link" data-toggle="modal" data-target="#modalRegisterForm'.$x.$x.'">Delete Adress</a>
+                    <a href="#" class="card-link" data-toggle="modal" data-target="#modalRegisterForm'.$x.$x.'"> <i class="fa fa-minus"></i> Delete Adress</a>
                     <div class="modal fade" id="modalRegisterForm'.$x.$x.'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
                                       <div class="modal-dialog" role="document">
                                         <div class="modal-content">
