@@ -26,7 +26,7 @@ $c=$i->getCart(getHostByName(getHostName()));
 
         <div id="logo" class="pull-left">
             <img width="40px" style="margin-bottom: 15px; margin-right: 5px;" src="img/logo.png">
-            <h1 style="display: inline-block;"><a href="#intro" ><span style="color: #4A8239;">archi</span> mamm<span style="color: #4A8239; font-size: 42px;">o</span>u</a></h1>
+            <h1 style="display: inline-block;"><a href="index.php" ><span style="color: #4A8239;">archi</span> mamm<span style="color: #4A8239; font-size: 42px;">o</span>u</a></h1>
         </div>
 
         <nav id="nav-menu-container">
