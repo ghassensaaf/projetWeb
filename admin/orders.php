@@ -12,6 +12,7 @@ include 'inc/header.php';
 include "../inc/fonctionC.php";
 $f=new fonctionC();
 $la=$f->getOrders();
+
 ?>
 
 
@@ -30,8 +31,8 @@ $la=$f->getOrders();
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Users</a></li>
-                            <li class="active">Admins</li>
+                            <li><a href="#">Prods</a></li>
+                            <li class="active">Orders</li>
                         </ol>
                     </div>
                 </div>
@@ -46,7 +47,7 @@ $la=$f->getOrders();
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">Admins List</strong>
+                        <strong class="card-title">Order List</strong>
                     </div>
 
                     <div class="table-stats order-table ov-h">
@@ -59,7 +60,7 @@ $la=$f->getOrders();
                                 <th>login</th>
                                 <th>Date</th>
                                 <th>Amount Due</th>
-                                <th>Edit Status</th>
+                                <th class="text-center">Edit Status</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -117,11 +118,11 @@ $la=$f->getOrders();
 
                                     echo '
                                     </div>
-                                    <div class="modal fade" id="modalRegisterForm'.$x.$x.'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+                                    <div class="modal fade" id="modalRegisterForm'.$x.'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
                                       <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                           <div class="modal-header text-center">
-                                            <h4 class="modal-title w-100 font-weight-bold">Delete Account</h4>
+                                            <h4 class="modal-title w-100 font-weight-bold">Cancel Order</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                               <span aria-hidden="true">&times;</span>
                                             </button>
@@ -129,21 +130,44 @@ $la=$f->getOrders();
                                           <form action="forms.php" method="post">
                                             <div class="modal-body mx-3">
                                             <div class="md-form mb-5">
-                                              <p class="text-center"> Username </p>
-                                              <input type="text" id="orangeForm-name" name="" class="form-control validate" value="" disabled>
+                                              <p class="text-center"> Innovice number </p>
+                                              <input type="text" id="orangeForm-name" name="" class="form-control validate text-center" value="'.$a["innoNumber"].'" disabled>
                                             </div>
-                                            <div class="md-form mb-5">';
-                                    if($a['status']==1)
-                                    {
-                                        echo '<p class="text-center text-danger">Do you Really Want to Suspend the admin with the above login</p>';
-                                    }
-                                    else
-                                        echo '<p class="text-center text-success">Do you Really Want to Activate the admin with the above username</p>';
-                                    echo '
+                                            <div class="md-form mb-5">
+                                                <p class="text-center text-danger">Do you Really Want to cancel the order with the above innovice number</p>
                                             </div>
-                                            <input type="hidden" name="login" value="'.$a["login"].'">
-                                            <input type="hidden" name="status" value="'.$a["status"].'">
-                                            <input type="hidden" name="form" value="editStatus">
+                                            <input type="hidden" name="inno" value="'.$a["innoNumber"].'">
+                                            <input type="hidden" name="form" value="cancelOrder">
+                                          </div>
+                                          <div class="modal-footer d-flex justify-content-center">
+                                            <input type="submit" class="btn btn-danger" value="Confirm">
+                                            <input type="button" class="btn btn-success" data-dismiss="modal" aria-label="Close" value="Cancel">
+                                             
+                                          </div>
+                                          </form>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="modal fade" id="modalRegisterForm'.$x.$x.'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header text-center">
+                                            <h4 class="modal-title w-100 font-weight-bold">Confirm Order</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+                                          </div>
+                                          <form action="forms.php" method="post">
+                                            <div class="modal-body mx-3">
+                                            <div class="md-form mb-5">
+                                              <p class="text-center"> Innovice number </p>
+                                              <input type="text" id="orangeForm-name" name="" class="form-control validate text-center" value="'.$a["innoNumber"].'" disabled>
+                                            </div>
+                                            <div class="md-form mb-5">
+                                                    <p class="text-center text-success">Do you Really Want to confirm the order with the above innovice number</p>
+                                            </div>
+                                            <input type="hidden" name="inno" value="'.$a["innoNumber"].'">
+                                            <input type="hidden" name="form" value="confirmOrder">
                                           </div>
                                           <div class="modal-footer d-flex justify-content-center">
                                             <input type="submit" class="btn btn-danger" value="Confirm">

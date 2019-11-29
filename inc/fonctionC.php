@@ -24,14 +24,23 @@ class fonctionC
             $req->bindValue(':pw',MD5($pwd));
 
             $req->execute();
-            return true;
+
 
         }
         catch (Exception $e)
         {
-            return('Erreur: '.$e->getCode());
+            echo('Erreur: '.$e->getCode());
         }
 
+        $sql2="insert into amammou.solde_fidelite (uname) value ('$un')";
+        try
+        {
+            $db->query($sql2);
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
     }
     public function Logedin($login,$pwd)
     {
@@ -62,15 +71,15 @@ class fonctionC
             die('Erreur: '.$e->getMessage());
         }
     }
-    function showAdress($uname,$addid=null)
+    function showAdress($uname=null,$addid=null)
     {
-        if($addid==null)
+        if($addid!=null)
+        {
+            $sql="select * from amammou.adresses where add_id='$addid' ORDER BY add_id ASC";
+        }
+        else if($uname!=null)
         {
             $sql="select * from amammou.adresses where u_uname='$uname' ORDER BY add_id ASC";
-        }
-        else
-        {
-            $sql="select * from amammou.adresses where u_uname='$uname'and add_id='$addid' ORDER BY add_id ASC";
         }
 
         $db = config::getConnexion();
@@ -467,10 +476,34 @@ class fonctionC
                     echo 'error :'.$e->getMessage();
                 }
 
-
+        }
+        $fid=$this->getSoldeF($uname)["solde"];
+            $due=$v;
+            $dis=0;
+        if($fid<$v)
+        {
+            $v=$v-$fid;
+            $dis=$fid;
+            $fid=0;
+        }
+        else
+        {
+            $fid=$fid-$v;
+            $dis=$v;
+            $v=0;
+        }
+        $sql5="update amammou.solde_fidelite set solde='$fid' where uname='$uname'";
+            $db=config::getConnexion();
+        try
+        {
+            $db->query($sql5);
+        }
+        catch (Exception $e)
+        {
+            echo 'error :'.$e->getMessage();
         }
           // aaa ta3mel commande fiha num el fatoura
-        $sql2="insert into amammou.orders (uname, dueAmount, innoNumber, totalQty, idAdd) values ('$uname','$v','$x','$n','$idAdd')";
+        $sql2="insert into amammou.orders (uname, dueAmount, innoNumber, totalQty, idAdd,discount) values ('$uname','$v','$x','$n','$idAdd','$dis')";
         try
         {
             $db->query($sql2);
@@ -488,18 +521,43 @@ class fonctionC
         {
             echo 'error :'.$e->getMessage();
         }
-    }
-    function getOrders($uname=null)
-    {
-        if ($uname==null)
+        $sql4="update amammou.solde_fidelite set solde=solde+'$due'*0.05 where uname='$uname'";
+        try
         {
-            $sql="select * from amammou.orders  order by OrderDate desc";
+            $db->query($sql4);
         }
-        else
+        catch (Exception $e)
+        {
+            echo 'error :'.$e->getMessage();
+        }
+
+
+
+
+    }
+    function getOrders($uname=null,$inno=null)
+    {
+        if ($uname!=null)
         {
             $sql="select * from amammou.orders where uname='$uname' order by OrderDate desc";
         }
-
+        else if($inno!=null)
+        {
+            $sql="select * from amammou.orders where innoNumber='$inno' order by OrderDate desc";
+            $db=config::getConnexion();
+            try
+            {
+                return $db->query($sql)->fetch()["discount"];
+            }
+            catch (Exception $e)
+            {
+                echo 'error :'.$e->getMessage();
+            }
+        }
+        else
+        {
+            $sql="select * from amammou.orders  order by OrderDate desc";
+        }
         $db=config::getConnexion();
         try
         {
@@ -517,6 +575,45 @@ class fonctionC
         try
         {
             return $db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            echo 'error :'.$e->getMessage();
+        }
+    }
+    function confirmOrder($inno)
+    {
+        $sql="update amammou.orders set Status=1  where innoNumber='$inno'";
+        $db=config::getConnexion();
+        try
+        {
+           $db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            echo 'error :'.$e->getMessage();
+        }
+    }
+    function cancelOrder($inno)
+    {
+        $sql="update amammou.orders set Status=-1 where innoNumber='$inno'";
+        $db=config::getConnexion();
+        try
+        {
+            $db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            echo 'error :'.$e->getMessage();
+        }
+    }
+    function getSoldeF($un)
+    {
+        $sql="select * from amammou.solde_fidelite where uname='$un'";
+        $db=config::getConnexion();
+        try
+        {
+            return $db->query($sql)->fetch();
         }
         catch (Exception $e)
         {

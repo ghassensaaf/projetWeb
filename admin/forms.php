@@ -235,10 +235,28 @@ else if($_POST["form"]=="updateCart")
 }
 else if($_POST["form"]=="addOrder")
 {
-    echo"7ad hna";
+
     if(isset($_POST["uname"]) and isset($_POST["addId"]))
     {
         $f=new fonctionC();
         $f->addFromCart($_POST["uname"],$_POST["addId"]);
+    }
+}
+else if($_POST["form"]=="confirmOrder")
+{
+    if(isset($_POST["inno"]))
+    {
+        $f=new fonctionC();
+        $f->confirmOrder($_POST["inno"]);
+        header("location:orders.php");
+    }
+}
+else if($_POST["form"]=="cancelOrder")
+{
+    if(isset($_POST["inno"]))
+    {
+        $f=new fonctionC();
+        $f->cancelOrder($_POST["inno"]);
+        header("location:orders.php");
     }
 }

@@ -136,3 +136,18 @@ function ShowHidePass() {
     x.type = "password";
   }
 }
+function control()
+{
+  var p1=document.getElementById("pass").value;
+  var p2=document.getElementById("pass2").value;
+  if(p2===p1)
+  {
+
+  }
+  else
+  {
+    document.getElementById("pwd-err").innerHTML="passwords are not the same";
+    return false;
+  }
+
+}

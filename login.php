@@ -16,15 +16,17 @@ else
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
             <div class="login-form">
-                <form class="signin" action="auth.php" method="post">
+                <form class="signin" onsubmit="return control()" action="auth.php" method="post">
                     <div class="sign-in-htm">
                         <div class="group">
-                            <label for="luser" class="label">Username</label>
-                            <input id="luser" name="luser" type="text" class="input" placeholder="username/e-mail">
+                            <label for="login" class="label">Username</label>
+                            <input id="login" name="luser" type="text" class="input" placeholder="username/e-mail" minlength="6" maxlength="16" required>
+                            <label class="text-warning label" for="login" id="login-error"></label>
                         </div>
                         <div class="group">
                             <label for="lpass" class="label">Password</label>
-                            <input id="lpass" name="lpass" type="password" class="input" data-type="password" placeholder="password">
+                            <input id="lpass" name="lpass" type="password" class="input" data-type="password" placeholder="password" minlength="8" maxlength="16" required>
+                            <label class="text-warning label" for="login" id="pwd-error"></label>
                         </div>
                         <div class="group">
                             <input id="show-hide-pw" type="checkbox" class="check" onclick="ShowHidePass()">
@@ -35,7 +37,7 @@ else
                             <label for="check"><span class="icon"></span> Keep me Signed in</label>
                         </div>
                         <div class="group">
-                            <input type="submit" class="button" value="Sign In">
+                            <input type="submit" onclick="control()" class="button" value="Sign In">
                         </div>
                         <div class="hr"></div>
                         <div class="foot-lnk">
@@ -43,27 +45,29 @@ else
                         </div>
                     </div>
                 </form>
-                <form class="signup" action="new_user.php" method="post">
+                <form class="signup" action="new_user.php" onsubmit="return control()" method="post">
                     <div class="sign-up-htm">
                         <div class="group">
                             <label for="luser" class="label">Username</label>
-                            <input id="luser" name="luser" type="text" class="input" placeholder="username">
+                            <input id="login" name="luser" type="text" class="input" placeholder="username" required>
+                            <label class="text-warning label" for="login" id="login-error1"></label>
                         </div>
                         <div class="group">
                             <label for="name" class="label">Full Name</label>
-                            <input id="name" name="name" type="text" class="input" placeholder="nom prenom">
+                            <input id="name" name="name" type="text" class="input" placeholder="nom prenom"required >
                         </div>
                         <div class="group">
-                            <label for="lpass" class="label">Password</label>
-                            <input id="lpass" name="lpass" type="password" class="input" data-type="password" placeholder="password">
+                            <label for="pass" class="label">Password</label>
+                            <input id="pass" name="lpass" type="password" class="input" data-type="password" placeholder="password" required>
                         </div>
                         <div class="group">
                             <label for="pass2" class="label">Repeat Password</label>
-                            <input id="pass2" type="password" class="input" data-type="password">
+                            <input id="pass2" type="password" class="input" data-type="password" required>
+                            <label class="text-warning label" for="login" id="pwd-err"></label>
                         </div>
                         <div class="group">
                             <label for="mail" class="label">Email Address</label>
-                            <input id="mail" name="email" type="text" class="input">
+                            <input id="mail" name="email" type="email" class="input">
                         </div>
                         <div class="group">
                             <label for="phone" class="label">Phone Number</label>
@@ -86,6 +90,7 @@ else
 
 
 </main>
+
 
 <?php
 include "inc/footer.php";

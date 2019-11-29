@@ -6,7 +6,7 @@ include "inc/header.php";
 include "../inc/fonctionC.php";
 $i=new fonctionC();
 $orders=$i->getOrderProds($_POST["inno"]);
-$add=$i->showAdress($_SESSION["uname"],$_POST["add"])->fetch();
+$add=$i->showAdress(null,$_POST["add"])->fetch();
 ?>
 
 <main style="margin:10% auto;">
@@ -44,14 +44,22 @@ $add=$i->showAdress($_SESSION["uname"],$_POST["add"])->fetch();
                             $v=$v+$o["qty"]*$p["prix"];
                             $x++;
                         }
+                        $discount=$i->getOrders(null,$_POST["inno"]);
+
                         ?>
                         </tbody>
                         <tfoot>
                         <tr>
                             <td class="text-center" style="background-color: #212529; color: white;"></td>
                             <td class="text-center" style="background-color: #212529; color: white;"></td>
+                            <td class="text-center" style="background-color: #212529; color: white;"><strong>Discount</strong></td>
+                            <td><?php echo $discount." TND"?></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" style="background-color: #212529; color: white;"></td>
+                            <td class="text-center" style="background-color: #212529; color: white;"></td>
                             <td class="text-center" style="background-color: #212529; color: white;"><strong>Total</strong></td>
-                            <td><?php echo $v." TND"?></td>
+                            <td><?php echo $v-$discount." TND"?></td>
                         </tr>
                         </tfoot>
                     </table>

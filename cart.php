@@ -3,11 +3,13 @@ session_start ();
 if( isset($_SESSION['name'])  && isset($_SESSION['email']))
 {
     include "inc/headerCon.php";
+    $fid=$i->getSoldeF($_SESSION["uname"]);
 }
 else
 {
     include "inc/header.php";
 }
+
 ?>
 
         <div class="container cart-container">
@@ -32,7 +34,7 @@ else
                                 {
                                     echo '
                                     <tr>
-                                        <td colspan="6"><h3>there are no items in your cart</h3></td>
+                                        <td colspan="6"><h3>Your Cart Is Empty</h3></td>
                                     </tr>
                                     <tr>
                                         <td colspan="6"><h3>Go to <a href="products.php">shop</a></h3></td>
@@ -75,9 +77,16 @@ else
                         </div>
                     <div class="cartbox__btn">
                         <ul class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-between">
-                            <li><a href="#">Coupon Code</a></li>
-                            <li><a href="#">Apply Code</a></li>
-                            <li><a href="checkout.php">Check Out</a></li>
+
+                            <?php
+                            if($c->rowCount()!=0)
+                            {
+                                echo '  <li><a href="#">Coupon Code</a></li>
+                                        <li><a href="#">Apply Code</a></li>
+                                        <li><a href="checkout.php">Check Out</a></li>';
+                            }
+                            ?>
+
                         </ul>
                     </div>
                 </div>
@@ -88,16 +97,16 @@ else
                         <div class="cartbox-total d-flex justify-content-between">
                             <ul class="cart__total__list">
                                 <li>Cart total</li>
-                                <li>Sub Total</li>
+                                <li>fidelity Discount</li>
                             </ul>
                             <ul class="cart__total__tk">
                                 <li><?php echo $v?> TND</li>
-                                <li>0 TND</li>
+                                <li><?php if(isset($_SESSION["uname"])){if($v > $fid["solde"]){echo $fid["solde"];}else {echo $v;}} else {echo '0.00';} ?> TND</li>
                             </ul>
                         </div>
                         <div class="cart__total__amount">
                             <span>Grand Total</span>
-                            <span><?php echo $v?> TND</span>
+                            <span><?php if(isset($_SESSION["uname"])){ if($v > $fid["solde"]){echo $v-$fid["solde"];}else {echo "0.00";}} else {echo '0.00';} ?> TND</span>
                         </div>
                     </div>
                 </div>

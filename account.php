@@ -12,6 +12,7 @@ else
 }
 $n=new fonctionC();
 $u=$n->getUser($_SESSION['uname']);
+$fid=$n->getSoldeF($_SESSION["uname"]);
 
 
 foreach ($u as $t)
@@ -21,8 +22,14 @@ foreach ($u as $t)
 <main style="margin-top: 100px;">
 
     <div class="account-wrap">
-        <div style="padding: 20% 10%; ">
-            <h3 style="width:30%;margin: auto;">My Account</h3>
+        <div  style="padding: 20% 10%; ">
+            <div class="row">
+                    <div style="background-color: rgba(255,255,255,0.4); border-radius: 25px;border: 1px solid #4A8239; height: 150px; margin: -10% 5% 10% 0;" class="col-lg-5 col-md-6 col-sm-12">
+                        <h4 style="margin-top: 10%; color: #4A8239">fidelity balance</h4>
+                        <h2><?php echo $fid["solde"]?><sup>TND</sup></h2>
+                    </div>
+            </div>
+            <h3 class="text-center">My Account</h3>
             <div class="login-form">
                 <form class="signin" action="admin/forms.php" method="post">
                     <div class="sign-in-htm">
