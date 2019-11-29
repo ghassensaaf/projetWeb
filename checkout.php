@@ -10,7 +10,7 @@ $add=$i->showAdress($_SESSION["uname"]);
 
 <main>
     <div class="container">
-        <form method="post" action="admin/forms.php">
+        <form method="post" onsubmit="return checkout_control()" action="admin/forms.php">
         <div style="margin: 10% auto;" class="row">
             <div style="box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.4); background-color:white;border: 2px solid gray" class="col-lg-8 col-md-12">
 
@@ -41,7 +41,9 @@ $add=$i->showAdress($_SESSION["uname"]);
                                                 ';
                                             }
                                             ?>
+                                            <span class="text-danger" id="err-add"></span>
                                             <hr>
+
                                             <footer class="address-footer">
                                                 <input type="hidden" name="form" value="addOrder">
                                                 <input type="hidden" name="uname" value="<?php echo $_SESSION["uname"]; ?>">

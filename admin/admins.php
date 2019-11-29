@@ -63,23 +63,27 @@ $la=$f->getAdmins();
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form action="forms.php" method="post">
+                                    <form action="forms.php" onsubmit="return addAdmin()" method="post">
                                         <div class="modal-body mx-3">
                                             <div class="md-form mb-5">
                                                 <label data-error="wrong" data-success="right" for="orangeForm-name">login</label>
-                                                <input type="text" id="orangeForm-name" name="login" class="form-control validate" placeholder="login">
+                                                <input type="text" id="login" name="login" class="form-control validate" placeholder="login">
+                                                <span class="text-danger" id="err-1"></span>
                                             </div>
                                             <div class="md-form mb-5">
                                                 <label data-error="wrong" data-success="right" for="orangeForm-name">Name</label>
-                                                <input type="text" id="orangeForm-name" name="name" class="form-control validate" placeholder="full name">
+                                                <input type="text" id="name" name="name" class="form-control validate" placeholder="full name">
+                                                <span class="text-danger" id="err-2"></span>
                                             </div>
                                             <div class="md-form mb-5">
                                                 <label data-error="wrong" data-success="right" for="orangeForm-name">Password</label>
-                                                <input type="password" id="orangeForm-name" name="lpass" class="form-control validate" placeholder="password">
+                                                <input type="password" id="pwd" name="lpass" class="form-control validate" placeholder="password">
+                                                <span class="text-danger" id="err-3"></span>
                                             </div>
                                             <div class="md-form mb-5">
                                                 <label data-error="wrong" data-success="right" for="orangeForm-email">Email</label>
-                                                <input type="email" id="orangeForm-email" name="email" class="form-control validate" placeholder="email@examle.xyz">
+                                                <input type="text" id="orangeForm-email" name="email" class="form-control validate" placeholder="email@examle.xyz">
+                                                <span class="text-danger" id="err-4"></span>
                                             </div>
 
                                         </div>

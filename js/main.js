@@ -140,6 +140,7 @@ function control()
 {
   var p1=document.getElementById("pass").value;
   var p2=document.getElementById("pass2").value;
+  var chkbxnum=document.querySelectorAll('input[type="radio"]:checked').length;
   if(p2===p1)
   {
 
@@ -149,5 +150,30 @@ function control()
     document.getElementById("pwd-err").innerHTML="passwords are not the same";
     return false;
   }
+  if(chkbxnum===0)
+  {
+    document.getElementById("err-add").innerHTML="Select 1 Adress Please";
+    return false;
+  }
+  else
+  {
+    document.getElementById("err-add").innerHTML="";
+  }
+
 
 }
+function checkout_control()
+{
+  var chkbxnum=document.querySelectorAll('input[type="radio"]:checked').length;
+
+  if(chkbxnum===0)
+  {
+    document.getElementById("err-add").innerHTML="Select 1 Adress Please";
+    return false;
+  }
+  else
+  {
+    document.getElementById("err-add").innerHTML="";
+  }
+}
+

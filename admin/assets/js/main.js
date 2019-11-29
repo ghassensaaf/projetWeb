@@ -88,3 +88,53 @@ jQuery(document).ready(function($) {
   
  
 });
+function validateEmail(email)
+{
+	var re = /\S+@\S+\.\S+/;
+	return re.test(email);
+}
+function addAdmin()
+{
+	var login=document.getElementById("login");
+	var name=document.getElementById("name").value;
+	var pwd=document.getElementById("pwd");
+	var email=document.getElementById("email");
+
+	if(login.value.length<6)
+	{
+		document.getElementById("err-1").innerHTML="login must have at least 6 caracters";
+		return false;
+	}
+	else
+	{
+		document.getElementById("err-1").innerHTML=""
+	}
+	if(/[A-Z]/.test(name[0]))
+	{
+		document.getElementById("err-2").innerHTML="";
+		return false;
+	}
+	else
+	{
+		document.getElementById("err-2").innerHTML="First letter of name Must be capitalized";
+	}
+	if (pwd.value.length<8)
+	{
+		document.getElementById("err-3").innerHTML="password must have at least 8 caracters";
+		return false;
+	}
+	else
+	{
+		document.getElementById("err-3").innerHTML=""
+	}
+	if((validateEmail(email))==false)
+	{
+		document.getElementById("err-4").innerHTML="Email wrong format:(nomprenom@domain.xyz)";
+		return false;
+	}
+	else
+	{
+		document.getElementById("err-4").innerHTML=""
+	}
+
+}
