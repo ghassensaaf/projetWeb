@@ -27,16 +27,16 @@ $c=$i->getCart(getHostByName(getHostName()));
 
         <div id="logo" class="pull-left">
             <img width="40px" style="margin-bottom: 15px; margin-right: 5px;" src="img/logo.png">
-            <h1 style="display: inline-block;"><a href="index.php" ><span style="color: #4A8239;">archi</span> mamm<span style="color: #4A8239; font-size: 42px;">o</span>u</a></h1>
+            <h1 id="brand" style="display: inline-block;"><a href="index.php" ><span style="color: #4A8239;">archi</span> mamm<span style="color: #4A8239; font-size: 42px;">o</span>u</a></h1>
         </div>
 
         <nav id="nav-menu-container">
 
             <ul class="nav-menu">
                 <li>
-                    <form class="form-inline my-2 my-lg-0" action="products.php">
+                    <form class="form-inline my-2 my-lg-0" method="get" action="products.php">
                         <div class="nav-item search-box">
-                            <input class="search-f mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <input class="search-f mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
                             <span><button type="submit" class=" search-b btn btn-light"><i class="fa fa-search"></i></button></span>
                         </div>
                     </form>
@@ -59,13 +59,15 @@ $c=$i->getCart(getHostByName(getHostName()));
                 <li class=""><a href="index.php">Q/A</a></li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-user"></i> <span class="vis-toggle">Login/Signup</span></a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i class="fas fa-user"></i> <span class="vis-toggle">My account</span></a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="account.php">My Account</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="adresses.php">My Adresses</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="orders.php">My Orders</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="wishlist.php">My Wishlist</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="logout.php">Logout</a>
 

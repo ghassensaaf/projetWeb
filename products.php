@@ -10,7 +10,15 @@ else
 }
 
 $f=new fonctionC();
-$p=$f->getProds();
+if(isset($_GET["search"]))
+{
+    $p=$f->getProds(null,null,null,$_GET["search"]);
+}
+else
+{
+    $p=$f->getProds();
+}
+
 ?>
     <section class="cat_product_area section_gap">
         <div class="container">
@@ -31,12 +39,12 @@ $p=$f->getProds();
                         </div>
                     </div>
 
+
                     <div class="latest_product_inner">
                         <div class="row">
                           <?php
                             foreach ($p as $t)
                             {
-
                               echo '
                               <div class="col-lg-4 col-md-6">
                                   <div class="single-product">
@@ -49,10 +57,18 @@ $p=$f->getProds();
                                           <div class="p_icon">
                                               <a href="#">
                                                   <i class="far fa-eye"></i>
-                                              </a>
-                                              <a href="#">
-                                                  <i class="far fa-heart"></i>
-                                              </a>
+                                              </a>';
+                                              if(isset($_SESSION['email']))
+                                              {
+                                                  echo'<form style="display: inline-block;"  method="post" action="admin/forms.php">
+                                                  <input type="hidden" name="pId" value="'.$t["reference"].'" >
+                                                  <input type="hidden" name="un" value="'.$_SESSION['email'].'" >
+                                                  <input type="hidden" name="form" value="addWish" >
+                                                  <button id="add-to-cart" type="submit"><i class="far fa-heart"></i></i></button>
+
+                                              </form>';
+                                              }
+                                                echo'
                                               <form style="display: inline-block;"  method="post" action="admin/forms.php">
                                                   <input type="hidden" name="pId" value="'.$t["reference"].'" >
                                                   <input type="hidden" name="form" value="addCart" >
@@ -65,11 +81,32 @@ $p=$f->getProds();
                                       <div class="product-btm">
                                           <a href="#" class="d-block">
                                               <h4>'.$t["nom_produit"].'</h4>
-                                          </a>
-                                          <div class="mt-3">
-                                             <span class="mr-4">'.$t["prix"].' dt/m²</span>
-                                              
-                                          </div>
+                                          </a>';
+                                              if($t["en_prom"]==1)
+                                              {
+                                                  $prom=$f->getProms($t["id_prom"]);
+                                                    foreach ($prom as $ppp)
+                                                    {
+                                                        $newP=$t["prix"]-($t["prix"]*($ppp["pourcentag"]/100));
+                                                    }
+
+                                                  echo '
+                                                  <div class="mt-3">
+                                                     <span style="text-decoration: line-through tomato;" class="mr-4">'.$t["prix"].' <sup>dt/m²</sup></span>
+                                                     <span class="mr-4">'.$newP.' <sup>dt/m²</sup></span> 
+                                                  </div>
+                                                  ';
+                                              }
+                                              else
+                                              {
+                                                  echo '
+                                                  <div class="mt-3">
+                                                     <span class="mr-4">'.$t["prix"].' dt/m²</span>
+                                                  </div>
+                                                  ';
+                                              }
+
+                                        echo '
                                       </div>
                                   </div>
                               </div>

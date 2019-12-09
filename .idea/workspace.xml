@@ -2,11 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a5a1fed-1156-454b-8145-b255b12e4d9c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/admin/new_mail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/prods.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projetWeb.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/promotion.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wishlist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/aef3b791-8c18-4c39-b9aa-823b04a8079b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/aef3b791-8c18-4c39-b9aa-823b04a8079b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/admins.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/admins.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin/assets/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/checkout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/forms.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/forms.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/inc/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/inc/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/inc/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/inc/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/users.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/steel.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/steel.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/fonctionC.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/fonctionC.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/headerCon.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/headerCon.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/products.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,6 +75,20 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="amammou: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="produit: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="amammou: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="promotion: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="amammou: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="solde_fidelite: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
@@ -97,14 +128,14 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\projetWeb\inc" />
-      <recent name="C:\wamp64\www\php 101\login" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\projetWeb\" />
       <recent name="C:\wamp64\www\php 101" />
       <recent name="C:\wamp64\www\php 101\inc" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\projetWeb\inc" />
+      <recent name="C:\wamp64\www\php 101\login" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -131,7 +162,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@f0554721" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@7e96d9d" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@7e96d9d" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@33bf1231" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -176,7 +212,16 @@
       <workItem from="1574778115618" duration="12320000" />
       <workItem from="1574845456172" duration="1876000" />
       <workItem from="1574877206087" duration="69740000" />
-      <workItem from="1575016753911" duration="3092000" />
+      <workItem from="1575016753911" duration="5742000" />
+      <workItem from="1575035678535" duration="4625000" />
+      <workItem from="1575470208135" duration="2422000" />
+      <workItem from="1575482707206" duration="7830000" />
+      <workItem from="1575555360056" duration="9386000" />
+      <workItem from="1575661617147" duration="3978000" />
+      <workItem from="1575808277964" duration="5925000" />
+      <workItem from="1575822269303" duration="119000" />
+      <workItem from="1575870955731" duration="614000" />
+      <workItem from="1575892803178" duration="23026000" />
     </task>
     <task id="LOCAL-00001" summary="new new">
       <created>1574254758066</created>

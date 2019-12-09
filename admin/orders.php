@@ -51,7 +51,7 @@ $la=$f->getOrders();
                     </div>
 
                     <div class="table-stats order-table ov-h">
-                        <table class="table table-hover text-center">
+                        <table id="ads" class="table table-hover text-center">
                             <thead>
                             <tr>
                                 <th class="serial">#</th>
@@ -61,6 +61,7 @@ $la=$f->getOrders();
                                 <th>Date</th>
                                 <th>Amount Due</th>
                                 <th class="text-center">Edit Status</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -180,6 +181,10 @@ $la=$f->getOrders();
                                     </div>
                                 </td>
                                             ';
+                                }
+                                if($a['Status']==1)
+                                {
+                                    echo '<td>same</td>';
                                 }
                                 echo '
                                         

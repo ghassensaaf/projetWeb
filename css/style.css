@@ -869,6 +869,7 @@ border: none;
     border-radius: 12%;
     position:relative;
     background-image:url("../img/login-bg.jpg") ;
+    back
     background-size: cover;
     box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
@@ -1343,5 +1344,20 @@ border: none;
   {
     display: inline;
   }
+}
+@media (min-width: 480px)
+{
+  #brand
+  {
+    font-size: 5px;
+  }
+}
+@media (max-width: 480px )
+{
+  #brand
+  {
+    font-size: 3px;
+  }
+
 }
 

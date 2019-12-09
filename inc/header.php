@@ -33,9 +33,9 @@ $c=$i->getCart(getHostByName(getHostName()));
 
             <ul class="nav-menu">
                 <li>
-                    <form class="form-inline my-2 my-lg-0" action="products.php">
+                    <form class="form-inline my-2 my-lg-0" method="post" action="products.php">
                         <div class="nav-item search-box">
-                            <input class="search-f mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <input class="search-f mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
                             <span><button type="submit" class=" search-b btn btn-light"><i class="fa fa-search"></i></button></span>
                         </div>
                     </form>
@@ -46,7 +46,7 @@ $c=$i->getCart(getHostByName(getHostName()));
                         Products
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Inner Wall </a>
+                        <a class="dropdown-item" href="promotion.php">Inner Wall </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Outer Wall</a>
                         <div class="dropdown-divider"></div>
