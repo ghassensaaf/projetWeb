@@ -297,4 +297,36 @@ else if($_POST["form"]=="remProm")
         header("location:prods.php");
     }
 }
+else if ($_POST["form"]=="forgotPwd")
+{
+    if(isset($_POST["em"]))
+    {
+        $f=new fonctionC();
+        $ss=$f->forgotPwd($_POST["em"]);
+        if($ss=="mathamech")
+        {
+            echo '<body onLoad="alert(\'Check Your Mail We Have No User With That E-Mail In Our Data Base...\')">';
+            // puis on le redirige vers la page d'accueil
+            echo '<meta http-equiv="refresh" content="0;URL=../forgot.php">';
+        }
+        else
+        {
+            header("location:../confirm.php");
+        }
+    }
+}
+else if ($_POST["form"]=="changePwd")
+{
+    if(isset($_POST["code"]) and isset($_POST["p1"]))
+    {
+        $f=new fonctionC();
+        $ss=$f->confirmPwd($_POST["code"],$_POST["p1"]);
+        if($ss=="tbadel")
+        {
+            echo '<body onLoad="alert(\'You successfully changed your password...\')">';
+            echo '<meta http-equiv="refresh" content="0;URL=../login.php">';
+        }
+
+    }
+}
 

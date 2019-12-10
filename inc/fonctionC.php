@@ -737,4 +737,77 @@ class fonctionC
             echo 'error :'.$e->getMessage();
         }
     }
+    function forgotPwd($em)
+    {
+        $sql="select * from amammou.users where u_email='$em'";
+        $db=config::getConnexion();
+        try
+        {
+            $res=$db->query($sql)->rowCount();
+        }
+        catch (Exception $e)
+        {
+            echo 'error :'.$e->getMessage();
+        }
+        if($res==1)
+        {
+            $x=random_int(100000,999999);
+            $sql1="insert into amammou.pwd_confirm (email, code) VALUES ('$em','$x')";
+            try
+            {
+                $db->query($sql1);
+            }
+            catch (Exception $e)
+            {
+                echo 'error :'.$e->getMessage();
+            }
+        }
+        else
+        {
+            return "mathamech";
+        }
+
+    }
+    function confirmPwd($code,$pwd)
+    {
+        $sql="select * from amammou.pwd_confirm where code='$code'";
+        $db=config::getConnexion();
+        try
+        {
+            $res=$db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            echo 'error :'.$e->getMessage();
+        }
+        if ($res->rowCount()<1)
+        {
+            echo '<body onLoad="alert(\'Wrong Confirmation Code...\')">';
+            // puis on le redirige vers la page d'accueil
+            echo '<meta http-equiv="refresh" content="0;URL=../confirm.php">';
+            return 0;
+        }
+        else
+        {
+            foreach ($res as $re)
+            {
+                $em=$re["email"];
+            }
+
+            $p=md5($pwd);
+            $sql2="update amammou.users set u_pwd='$p' where u_email='$em'";
+            $sql3="delete from amammou.pwd_confirm where email='$em'";
+            try
+            {
+                $db->query($sql2);
+                $db->query($sql3);
+                return "tbadel";
+            }
+            catch (Exception $e)
+            {
+                echo 'error :'.$e->getMessage();
+            }
+        }
+
+    }
 }
