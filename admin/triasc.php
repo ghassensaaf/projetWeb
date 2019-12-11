@@ -11,7 +11,7 @@ else
 include 'inc/header.php';
 include "../inc/fonctionC.php";
 $f=new fonctionC();
-$la=$f->getOrders();
+$la=$f->tri1();
 
 ?>
 
@@ -23,25 +23,12 @@ $la=$f->getOrders();
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Dashboard</h1>
+                        <h1>Dashboard </h1>
+
                         <form action="search.php" method="post">
                                             <input type="text" name="nom" id="headerSearch" placeholder="Type for search">
                                             <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                                         </form>
-                                        <form action="#" method="get">
-                                                                                   <select name="select" id="sortByselect" onchange="javascript:handleSelect(this)">
-
-                                                                                       <option  value="tridesc" >descendant </option>
-                                                                                       <option value="triasc">ascendant</option>
-                                                                                   </select>
-                                                                                   <input type="submit" class="d-none" value="tridesc.php">
-                                                                               </form>
-                                                                               <script type="text/javascript">
-                                                                                   function handleSelect(elm)
-                                                                                   {
-                                                                                       window.location = elm.value+".php";
-                                                                                   }
-                                                                               </script>
                     </div>
                 </div>
             </div>

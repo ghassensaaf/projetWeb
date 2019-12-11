@@ -10,11 +10,11 @@ else
 }
 include 'inc/header.php';
 include "../inc/fonctionC.php";
+$nom=$_POST["nom"];
 $f=new fonctionC();
-$la=$f->getOrders();
+$la=$f->search($nom);
 
 ?>
-
 
 
 <div class="breadcrumbs">
@@ -28,20 +28,6 @@ $la=$f->getOrders();
                                             <input type="text" name="nom" id="headerSearch" placeholder="Type for search">
                                             <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                                         </form>
-                                        <form action="#" method="get">
-                                                                                   <select name="select" id="sortByselect" onchange="javascript:handleSelect(this)">
-
-                                                                                       <option  value="tridesc" >descendant </option>
-                                                                                       <option value="triasc">ascendant</option>
-                                                                                   </select>
-                                                                                   <input type="submit" class="d-none" value="tridesc.php">
-                                                                               </form>
-                                                                               <script type="text/javascript">
-                                                                                   function handleSelect(elm)
-                                                                                   {
-                                                                                       window.location = elm.value+".php";
-                                                                                   }
-                                                                               </script>
                     </div>
                 </div>
             </div>
