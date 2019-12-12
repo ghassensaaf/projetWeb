@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a5a1fed-1156-454b-8145-b255b12e4d9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/confirm.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/forgot.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/aef3b791-8c18-4c39-b9aa-823b04a8079b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/aef3b791-8c18-4c39-b9aa-823b04a8079b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/forms.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/forms.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amammou.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/fonctionC.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/fonctionC.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projetWeb.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/orders.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +95,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/inc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
@@ -139,12 +132,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@906983c7" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -197,7 +185,11 @@
       <workItem from="1575822269303" duration="119000" />
       <workItem from="1575870955731" duration="614000" />
       <workItem from="1575892803178" duration="24413000" />
-      <workItem from="1575972994722" duration="22583000" />
+      <workItem from="1575972994722" duration="24727000" />
+      <workItem from="1576022315517" duration="4008000" />
+      <workItem from="1576057176213" duration="1263000" />
+      <workItem from="1576059342538" duration="22319000" />
+      <workItem from="1576153112443" duration="633000" />
     </task>
     <task id="LOCAL-00001" summary="new new">
       <created>1574254758066</created>
@@ -290,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574956148223</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added forgot password and password confirmation features">
+      <created>1576006457721</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1576006457721</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,6 +317,7 @@
     <MESSAGE value="correct 2" />
     <MESSAGE value="daily updates" />
     <MESSAGE value="added features to admin section(super admin);&#10;added the tech actor and it's use cases" />
-    <option name="LAST_COMMIT_MESSAGE" value="added features to admin section(super admin);&#10;added the tech actor and it's use cases" />
+    <MESSAGE value="added forgot password and password confirmation features" />
+    <option name="LAST_COMMIT_MESSAGE" value="added forgot password and password confirmation features" />
   </component>
 </project>
