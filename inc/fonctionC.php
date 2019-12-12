@@ -810,4 +810,52 @@ class fonctionC
         }
 
     }
+      function tri()
+    {
+      $sql="select * from amammou.orders order by OrderDate desc ";
+      $db=config::getConnexion();
+      try
+      {
+          return $db->query($sql);
+      }
+      catch (Exception $e)
+      {
+          echo 'error :'.$e->getMessage();
+      }
+    }
+      function tri1()
+      {
+        $sql="select * from amammou.orders order by OrderDate asc ";
+        $db=config::getConnexion();
+        try
+        {
+            return $db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            echo 'error :'.$e->getMessage();
+        }
+    }
+
+
+
+
+
+
+    function search($nom)
+    {
+        $sq1="select * from amammou.orders where uname='$nom'" ;
+        $db = config::getConnexion();
+        try{
+            $liste=$db->query($sq1);
+            return $liste;
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+
+
+    }
 }
+
