@@ -651,163 +651,53 @@ class fonctionC
         {
             echo 'error :'.$e->getMessage();
         }
-    }
-    function addWish($un,$pId)
-    {
-        $sql="insert into amammou.wishlist (pId, uname) values ('$un','$pId')";
-        $db=config::getConnexion();
-        try
-        {
-            $db->query($sql);
-        }
-        catch (Exception $e)
-        {
-            echo 'error :'.$e->getMessage();
-        }
-    }
-    function getWish($em)
-    {
-        $sql="select * from amammou.wishlist where uname='$em'";
-        $db=config::getConnexion();
-        try
-        {
-            return $db->query($sql);
-        }
-        catch (Exception $e)
-        {
-            echo 'error :'.$e->getMessage();
-        }
-    }
-    function deleteWish($pId,$em)
-    {
-        $sql="delete from amammou.wishlist where uname='$em' and pId='$pId'";
-        $db=config::getConnexion();
-        try
-        {
-            $db->query($sql);
-        }
-        catch (Exception $e)
-        {
-            echo 'error :'.$e->getMessage();
-        }
-    }
-    function getProms($idprom=null)
-    {
-        if ($idprom!=null)
-        {
-            $sql="select * from amammou.promotion where id='$idprom'";
-        }
-        else
-        {
-            $sql="select * from amammou.promotion";
-        }
-        $db=config::getConnexion();
-        try
-        {
-           return $db->query($sql)->fetchAll();
-        }
-        catch (Exception $e)
-        {
-            echo 'error :'.$e->getMessage();
-        }
-    }
-    function addProm($pId,$idprom)
-    {
-        $sql="update amammou.produit set en_prom=1,id_prom='$idprom' where reference='$pId'";
-        $db=config::getConnexion();
-        try
-        {
-            $db->query($sql);
-        }
-        catch (Exception $e)
-        {
-            echo 'error :'.$e->getMessage();
-        }
-    }
-    function remProm($pId)
-    {
-        $sql="update amammou.produit set en_prom=0,id_prom=0 where reference='$pId'";
-        $db=config::getConnexion();
-        try
-        {
-            $db->query($sql);
-        }
-        catch (Exception $e)
-        {
-            echo 'error :'.$e->getMessage();
-        }
-    }
-    function forgotPwd($em)
-    {
-        $sql="select * from amammou.users where u_email='$em'";
-        $db=config::getConnexion();
-        try
-        {
-            $res=$db->query($sql)->rowCount();
-        }
-        catch (Exception $e)
-        {
-            echo 'error :'.$e->getMessage();
-        }
-        if($res==1)
-        {
-            $x=random_int(100000,999999);
-            $sql1="insert into amammou.pwd_confirm (email, code) VALUES ('$em','$x')";
-            try
-            {
-                $db->query($sql1);
-            }
-            catch (Exception $e)
-            {
-                echo 'error :'.$e->getMessage();
-            }
-        }
-        else
-        {
-            return "mathamech";
-        }
+     }
+     function tri()
+     {
+       $sql="select * from amammou.orders order by OrderDate desc ";
+       $db=config::getConnexion();
+       try
+       {
+           return $db->query($sql);
+       }
+       catch (Exception $e)
+       {
+           echo 'error :'.$e->getMessage();
+       }
+     }
+       function tri1()
+       {
+         $sql="select * from amammou.orders order by OrderDate asc ";
+         $db=config::getConnexion();
+         try
+         {
+             return $db->query($sql);
+         }
+         catch (Exception $e)
+         {
+             echo 'error :'.$e->getMessage();
+         }
+     }
 
-    }
-    function confirmPwd($code,$pwd)
-    {
-        $sql="select * from amammou.pwd_confirm where code='$code'";
-        $db=config::getConnexion();
-        try
-        {
-            $res=$db->query($sql);
-        }
-        catch (Exception $e)
-        {
-            echo 'error :'.$e->getMessage();
-        }
-        if ($res->rowCount()<1)
-        {
-            echo '<body onLoad="alert(\'Wrong Confirmation Code...\')">';
-            // puis on le redirige vers la page d'accueil
-            echo '<meta http-equiv="refresh" content="0;URL=../confirm.php">';
-            return 0;
-        }
-        else
-        {
-            foreach ($res as $re)
-            {
-                $em=$re["email"];
-            }
 
-            $p=md5($pwd);
-            $sql2="update amammou.users set u_pwd='$p' where u_email='$em'";
-            $sql3="delete from amammou.pwd_confirm where email='$em'";
-            try
-            {
-                $db->query($sql2);
-                $db->query($sql3);
-                return "tbadel";
-            }
-            catch (Exception $e)
-            {
-                echo 'error :'.$e->getMessage();
-            }
-        }
 
-    }
+
+
+
+     function search($nom)
+     {
+         $sq1="select * from amammou.orders where uname='$nom'" ;
+         $db = config::getConnexion();
+         try{
+             $liste=$db->query($sq1);
+             return $liste;
+         }
+         catch (Exception $e)
+         {
+             die('Erreur: '.$e->getMessage());
+         }
+
+
+     }
+
 }

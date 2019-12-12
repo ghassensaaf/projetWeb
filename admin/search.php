@@ -10,8 +10,9 @@ else
 }
 include 'inc/header.php';
 include "../inc/fonctionC.php";
+$nom=$_POST["nom"];
 $f=new fonctionC();
-$la=$f->getOrders();
+$la=$f->search($nom);
 
 ?>
 
@@ -23,6 +24,10 @@ $la=$f->getOrders();
                 <div class="page-header float-left">
                     <div class="page-title">
                         <h1>Dashboard</h1>
+                        <form action="search.php" method="post">
+                                            <input type="text" name="nom" id="headerSearch" placeholder="Type for search">
+                                            <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                        </form>
                     </div>
                 </div>
             </div>
@@ -51,7 +56,7 @@ $la=$f->getOrders();
                     </div>
 
                     <div class="table-stats order-table ov-h">
-                        <table id="ads" class="table table-hover text-center">
+                        <table class="table table-hover text-center">
                             <thead>
                             <tr>
                                 <th class="serial">#</th>
@@ -61,7 +66,6 @@ $la=$f->getOrders();
                                 <th>Date</th>
                                 <th>Amount Due</th>
                                 <th class="text-center">Edit Status</th>
-                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -100,7 +104,7 @@ $la=$f->getOrders();
                                 if ($_SESSION["status"]==55)
                                 {
                                     echo '
-                                            
+
                                     <td>
                                     <div class="text-center">';
                                     if($a['Status']==0)
@@ -143,7 +147,7 @@ $la=$f->getOrders();
                                           <div class="modal-footer d-flex justify-content-center">
                                             <input type="submit" class="btn btn-danger" value="Confirm">
                                             <input type="button" class="btn btn-success" data-dismiss="modal" aria-label="Close" value="Cancel">
-                                             
+
                                           </div>
                                           </form>
                                         </div>
@@ -173,7 +177,7 @@ $la=$f->getOrders();
                                           <div class="modal-footer d-flex justify-content-center">
                                             <input type="submit" class="btn btn-danger" value="Confirm">
                                             <input type="button" class="btn btn-success" data-dismiss="modal" aria-label="Close" value="Cancel">
-                                             
+
                                           </div>
                                           </form>
                                         </div>
@@ -182,13 +186,9 @@ $la=$f->getOrders();
                                 </td>
                                             ';
                                 }
-                                if($a['Status']==1)
-                                {
-                                    echo '<td>same</td>';
-                                }
                                 echo '
-                                        
-                                    
+
+
 
                                 </tr>
                                 ';
@@ -204,5 +204,21 @@ $la=$f->getOrders();
     </div><!-- .animated -->
 </div><!-- .content -->
 
+<div class="clearfix"></div>
 
 <?php  include 'inc/footer.php'?>
+
+</div><!-- /#right-panel -->
+
+<!-- Right Panel -->
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+
+</body>
+</html>

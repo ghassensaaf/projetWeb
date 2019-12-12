@@ -30,6 +30,7 @@ $orders=$i->getOrders($_SESSION["uname"]);
                 <tbody>
                 <?php
                 $x=1;
+
                 foreach ($orders as $o)
                 {
                     echo'
@@ -45,12 +46,12 @@ $orders=$i->getOrders($_SESSION["uname"]);
                                 echo'
                             </td>
                             <td>
-                                <form action="orderDet.php" method="post"> 
+                                <form action="orderDet.php" method="post">
                                     <input type="hidden" name="inno" value="'.$o["innoNumber"].'">
                                     <input type="hidden" name="add" value="'.$o["idAdd"].'">
                                     <button type="submit"class="btn ">view details</button>
                                 </form>
-                                
+
                             </td>
                         </tr>
                     ';
