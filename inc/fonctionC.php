@@ -837,11 +837,6 @@ class fonctionC
         }
     }
 
-
-
-
-
-
     function search($nom)
     {
         $sq1="select * from amammou.orders where uname='$nom'" ;
