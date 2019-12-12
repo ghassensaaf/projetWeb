@@ -323,7 +323,7 @@ class fonctionC
     public function deleteTech($login)
     {
         $sql="DELETE FROM amammou.techs WHERE login = '$login'";
-        $db = config::getConnexion();
+            $db = config::getConnexion();
         try
         {
             $db->query($sql);
@@ -333,12 +333,20 @@ class fonctionC
             die('Erreur: '.$e->getMessage());
         }
     }
-    function getProds($l=null)
+    function getProds($l=null,$en_prom=null,$cat=null,$search=null)
     {
         $sql="select * from amammou.produit ORDER BY reference DESC";
         if($l!=null)
         {
             $sql=$sql." limit $l";
+        }
+        if($en_prom==1)
+        {
+            $sql="select * from amammou.produit where en_prom='$en_prom' ORDER BY reference DESC" ;
+        }
+        if($search!=null)
+        {
+            $sql="select * from amammou.produit where keyword like '%$search%'";
         }
         $db=config::getConnexion();
         try
@@ -402,7 +410,7 @@ class fonctionC
       }
       catch (Exception $e)
       {
-        echo 'Error: '.$e->getMessage;
+        echo 'Error: '.$e->getMessage();
       }
 
     }
@@ -466,10 +474,12 @@ class fonctionC
                 $n=$n+$qty;
                 // ta3ti num fatoura lkol produit fel panier
                 $sql="insert into amammou.pending_orders (uname, innoNumb, prodId,idAdd, qty) values ('$uname','$x','$pId','$idAdd','$qty')";
+                $sql2="update amammou.produit set quantite = quantite- '$qty' where  reference='$pId'";
                 $db=config::getConnexion();
                 try
                 {
                     $db->query($sql);
+                    $db->query($sql2);
                 }
                 catch (Exception $e)
                 {
@@ -530,12 +540,8 @@ class fonctionC
         {
             echo 'error :'.$e->getMessage();
         }
-
-
-
-
     }
-    function getOrders($uname=null,$inno=null)
+    function getOrders($uname=null,$inno=null,$ett=null)
     {
         if ($uname!=null)
         {
@@ -553,6 +559,10 @@ class fonctionC
             {
                 echo 'error :'.$e->getMessage();
             }
+        }
+        else if($ett!=null)
+        {
+            $sql="select * from amammou.orders  where Status=1";
         }
         else
         {
@@ -601,6 +611,28 @@ class fonctionC
         try
         {
             $db->query($sql);
+        }
+        catch (Exception $e)
+        {
+            echo 'error :'.$e->getMessage();
+        }
+        $sql2="select * from amammou.orders where innoNumber='$inno'";
+        try
+        {
+            $o=$db->query($sql2)->fetch();
+        }
+        catch (Exception $e)
+        {
+            echo 'error :'.$e->getMessage();
+        }
+        $uname=$o["uname"];
+        $d=$o["discount"];
+        $m=($o["dueAmount"]+$d)*0.05;
+        echo"m=$m d=$d";
+        $sql3="update amammou.solde_fidelite set solde=solde+'$d'-'$m' where uname='$uname' ";
+        try
+        {
+            $db->query($sql3);
         }
         catch (Exception $e)
         {

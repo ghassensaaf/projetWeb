@@ -41,7 +41,7 @@ else
                         </div>
                         <div class="hr"></div>
                         <div class="foot-lnk">
-                            <a class="login-link" href="login.php">Forgot Password?</a>
+                            <a class="login-link" href="forgot.php">Forgot Password?</a>
                         </div>
                     </div>
                 </form>

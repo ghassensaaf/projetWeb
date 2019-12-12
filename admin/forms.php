@@ -240,6 +240,7 @@ else if($_POST["form"]=="addOrder")
     {
         $f=new fonctionC();
         $f->addFromCart($_POST["uname"],$_POST["addId"]);
+        header("location:../index.php");
     }
 }
 else if($_POST["form"]=="confirmOrder")
@@ -260,3 +261,72 @@ else if($_POST["form"]=="cancelOrder")
         header("location:orders.php");
     }
 }
+else if($_POST["form"]=="addWish")
+{
+    if(isset($_POST["pId"])&&isset($_POST["un"]))
+    {
+        $f=new fonctionC();
+        $f->addWish($_POST["pId"],$_POST["un"]);
+        header("location:../products.php");
+    }
+}
+else if($_POST["form"]=="deletWish")
+{
+    if(isset($_POST["pId"])&&isset($_POST["un"]))
+    {
+        $f=new fonctionC();
+        $f->deleteWish($_POST["pId"],$_POST["un"]);
+        header("location:../wishlist.php");
+    }
+}
+else if($_POST["form"]=="addProm")
+{
+    if(isset($_POST["pId"])&&isset($_POST["prom"]))
+    {
+        $f=new fonctionC();
+        $f->addProm($_POST["pId"],$_POST["prom"]);
+        header("location:prods.php");
+    }
+}
+else if($_POST["form"]=="remProm")
+{
+    if(isset($_POST["pId"]))
+    {
+        $f=new fonctionC();
+        $f->remProm($_POST["pId"]);
+        header("location:prods.php");
+    }
+}
+else if ($_POST["form"]=="forgotPwd")
+{
+    if(isset($_POST["em"]))
+    {
+        $f=new fonctionC();
+        $ss=$f->forgotPwd($_POST["em"]);
+        if($ss=="mathamech")
+        {
+            echo '<body onLoad="alert(\'Check Your Mail We Have No User With That E-Mail In Our Data Base...\')">';
+            // puis on le redirige vers la page d'accueil
+            echo '<meta http-equiv="refresh" content="0;URL=../forgot.php">';
+        }
+        else
+        {
+            header("location:../confirm.php");
+        }
+    }
+}
+else if ($_POST["form"]=="changePwd")
+{
+    if(isset($_POST["code"]) and isset($_POST["p1"]))
+    {
+        $f=new fonctionC();
+        $ss=$f->confirmPwd($_POST["code"],$_POST["p1"]);
+        if($ss=="tbadel")
+        {
+            echo '<body onLoad="alert(\'You successfully changed your password...\')">';
+            echo '<meta http-equiv="refresh" content="0;URL=../login.php">';
+        }
+
+    }
+}
+

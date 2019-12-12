@@ -15,7 +15,7 @@ $orders=$i->getOrders($_SESSION["uname"]);
 
 <main style="margin:10% auto;">
     <div style="background-color: white;" class="container">
-        <div class="table-stats table-hover order-table ov-h">
+        <div class="container table-stats table-responsive table-hover order-table ov-h">
             <table class="table ">
                 <thead>
                 <tr>
