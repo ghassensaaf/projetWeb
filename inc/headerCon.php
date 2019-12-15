@@ -1,5 +1,7 @@
 <?php
 include 'inc/fonctionC.php';
+$cat= new fonctionC();
+$list=$cat->affichercategories();
 $i= new fonctionC();
 $c=$i->getCart(getHostByName(getHostName()));
 ?>
@@ -47,12 +49,12 @@ $c=$i->getCart(getHostByName(getHostName()));
                         Products
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Inner Wall </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Outer Wall</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Bedhead</a>
-                        <div class="dropdown-divider"></div>
+                        <?php
+                        foreach($list as $row)
+                            echo'
+                        <a class="dropdown-item" href="products.php?ID='.$row['reference'].'">'.$row['nom_categorie'].'</a>
+                        <div class="dropdown-divider"></div> ';
+                        ?>
                         <a class="dropdown-item" href="products.php">Show all</a>
                     </div>
                 </li>

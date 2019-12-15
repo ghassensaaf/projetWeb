@@ -2,12 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a5a1fed-1156-454b-8145-b255b12e4d9c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin/search.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/triasc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/tridesc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SearchP.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SeatchP.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/ajoutcategorie.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/ajoutproduit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/categories.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/deleteP.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/images/3055-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/images/3082-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/images/3134-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/images/4515-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/images/4519-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/images/7834429.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/inc/categorie.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/inc/produit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/modifiercategorie.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/produits.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/supprimercategorie.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/updateP.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single.product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/inc/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/inc/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/cart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inc/fonctionC.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/fonctionC.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/orders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/headerCon.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/headerCon.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/products.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wishlist.php" beforeDir="false" afterPath="$PROJECT_DIR$/wishlist.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,14 +75,14 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="amammou: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="produit: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="pwd_confirm: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="amammou: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="pwd_confirm: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="users: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -105,14 +128,17 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\projetWeb\inc" />
-      <recent name="C:\wamp64\www\php 101\login" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\projetWeb\" />
       <recent name="C:\wamp64\www\php 101" />
       <recent name="C:\wamp64\www\php 101\inc" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\projetWeb" />
+      <recent name="C:\wamp64\www\projetWeb\admin\inc" />
+      <recent name="C:\wamp64\www\projetWeb\admin" />
+      <recent name="C:\wamp64\www\projetWeb\inc" />
+      <recent name="C:\wamp64\www\php 101\login" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -193,7 +219,7 @@
       <workItem from="1576022315517" duration="4008000" />
       <workItem from="1576057176213" duration="1263000" />
       <workItem from="1576059342538" duration="22319000" />
-      <workItem from="1576153112443" duration="925000" />
+      <workItem from="1576153112443" duration="19563000" />
     </task>
     <task id="LOCAL-00001" summary="new new">
       <created>1574254758066</created>

@@ -852,5 +852,278 @@ class fonctionC
 
 
     }
+    function ajouterCategorie($categorie)
+    {
+        $sql="insert into categorie (nom_categorie) values (:nom_categorie)";
+        $db = config::getConnexion();
+        try
+        {
+            $req=$db->prepare($sql);
+            $nom_categorie=$categorie->getnom_categorie();
+            $req->bindValue(':nom_categorie',$nom_categorie);
+            $req->execute();
+        }
+        catch (Exception $e)
+        {
+            echo 'Erreur: '.$e->getMessage();
+        }
+
+    }
+
+    function affichercategories()
+    {
+
+        $sql="SElECT * From categorie";
+        $db = config::getConnexion();
+        try
+        {
+            $liste=$db->query($sql);
+            return $liste;
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+    }
+
+
+
+    function modifiercategorie($categorie,$reference)
+    {
+        $sql="UPDATE categorie SET nom_categorie=:nom_categorie WHERE reference=:reference";
+
+        $db = config::getConnexion();
+        //$db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
+        try
+        {
+            $req=$db->prepare($sql);
+            $ref=$categorie->getref();
+            $nomC=$categorie->getnom_categorie();
+
+            $req->bindValue(':reference',$reference);
+            $req->bindValue(':nom_categorie',$nomC);
+            $s=$req->execute();
+
+            // header('Location: index.php');
+        }
+        catch (Exception $e)
+        {
+            echo " Erreur ! ".$e->getMessage();
+        }
+
+    }
+
+
+
+    function supprimercategorie($reference)
+    {
+        $sql="DELETE FROM categorie where reference= :reference";
+        $db = config::getConnexion();
+        $req=$db->prepare($sql);
+        $req->bindValue(':reference',$reference);
+        try{
+            $req->execute();
+
+        }
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }
+    }
+    function ajouterProduit($produit)
+    {
+        $sql="insert into amammou.produit (nom_produit,description,prix,image,image2,image3,id_categorie) values (:nom_produit,:description,:prix,:image,:image,:image,:id_cat)";
+        $db = config::getConnexion();
+        try
+        {
+            $req=$db->prepare($sql);
+
+            $nom_produit=$produit->getnom_produit();
+            $description=$produit->getdescription();
+            $prix=$produit->getprix();
+            $image=$produit->getimage();
+            $cat=$produit->getid_categorie();
+
+
+            $req->bindValue(':nom_produit',$nom_produit);
+            $req->bindValue(':description',$description);
+            $req->bindValue(':prix',$prix);
+            $req->bindValue(':image',$image);
+            $req->bindValue(':id_cat',$cat);
+
+
+            $req->execute();
+        }
+
+        catch (Exception $e)
+        {
+            echo 'Erreur: '.$e->getMessage();
+        }
+    }
+
+
+    function afficherproduits()
+    {
+        $sql="SElECT * From produit ORDER BY prix";
+        $db = config::getConnexion();
+        try
+        {
+            $liste=$db->query($sql);
+            return $liste;
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+    }
+    function afficherproduits_kword($kword)
+    {
+        $sql="SElECT * From produit WHERE nom_produit LIKE '".$kword."%' ORDER BY prix";
+        $db = config::getConnexion();
+        try
+        {
+            $liste=$db->query($sql);
+            return $liste;
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+    }
+
+    function afficherproduits_cat($idc)
+    {
+        $sql="SElECT * From produit WHERE id_categorie=".$idc." ORDER BY prix";
+        $db = config::getConnexion();
+        try
+        {
+            $liste=$db->query($sql);
+            return $liste;
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+    }
+
+    function afficherproduits_cat_kword($idc,$kword)
+    {
+        $sql="SElECT * From produit WHERE id_categorie=".$idc." and nom_produit LIKE '".$kword."%' ORDER BY prix";
+        $db = config::getConnexion();
+        try
+        {
+            $liste=$db->query($sql);
+            return $liste;
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+    }
+
+
+    function getProduit($id)
+    {
+        $sql="SElECT * From produit where reference='".$id."'";
+        $db = config::getConnexion();
+        try
+        {
+            $liste=$db->query($sql);
+            return $liste;
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+    }
+
+    function supprimerproduit($reference)
+    {
+        $sql="DELETE FROM produit where reference= :reference";
+        $db = config::getConnexion();
+        $req=$db->prepare($sql);
+        $req->bindValue(':reference',$reference);
+        try
+        {
+            $req->execute();
+            // header('Location: index.php');
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+    }
+    function modifierproduit($produit)
+    {
+        $sql="UPDATE produit SET  nom_produit=:nom_produit,description=:description,prix=:prix,id_categorie=:cat,image=:image WHERE reference=:reference";
+
+        $db = config::getConnexion();
+        try
+        {
+            $req=$db->prepare($sql);
+            $reference=$produit->getref();
+            $nom_produit=$produit->getnom_produit();
+            $description=$produit->getdescription();
+            $prix=$produit->getprix();
+            $cat=$produit->getid_categorie();
+            $image=$produit->getimage();
+
+            $req->bindValue(':reference',$reference);
+            $req->bindValue(':nom_produit',$nom_produit);
+            $req->bindValue(':description',$description);
+            $req->bindValue(':prix',$prix);
+            $req->bindValue(':cat',$cat);
+            $req->bindValue(':image',$image);
+
+            $s=$req->execute();
+
+            // header('Location: index.php');
+        }
+        catch (Exception $e){
+            echo " Erreur ! ".$e->getMessage();
+        }
+
+    }
+
+    function countProd()
+    {
+        $sql="SElECT count(*)count From produit ORDER BY prix";
+        $db = config::getConnexion();
+        try
+        {
+            $liste=$db->query($sql);
+            return $liste;
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+    }
+    function countProd_Cat($id)
+    {
+        $sql="SElECT count(*)count From produit where id_categorie=".$id;
+        $db = config::getConnexion();
+        try
+        {
+            $liste=$db->query($sql);
+            return $liste;
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+    }
+    function getMail($uname)
+    {
+        $db=config::getConnexion();
+        try
+        {
+            return $db->query("select u_email from amammou.users where u_uname='$uname'");
+        }
+        catch (Exception $e)
+        {
+            die('Erreur: '.$e->getMessage());
+        }
+
+    }
 }
 

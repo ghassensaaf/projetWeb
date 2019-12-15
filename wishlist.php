@@ -48,7 +48,7 @@ $wish=$i->getWish($_SESSION["email"]);
                     echo'
                         <tr>
                             <td class="serial">'.$x.'.</td>
-                            <td><img class="rounded-circle" src="img/prods/'.$p["image"].'" alt=""></td>
+                            <td><img class="rounded-circle" src="admin/'.$p["image"].'" alt=""></td>
                             <td> #'.$p["reference"].' </td>
                             <td>'.$p["nom_produit"].'</td>
                             <td>'.$p["prix"].'<sup>TND</sup></td>

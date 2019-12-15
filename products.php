@@ -1,6 +1,24 @@
+<script>
+function showResult(str) {
+  
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else {  // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("DATA").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","SearchP.php?<?php if(isset($_GET['ID'])) if($_GET['ID']!="") echo"ID_Cat=".$_GET['ID']."&"; ?>kword=".concat(document.getElementById("kword").value));
+  xmlhttp.send();
+}
+</script>
 <?php
-session_start ();
-if( isset($_SESSION['name'])  && isset($_SESSION['email']))
+session_start();
+if(isset($_SESSION["uname"]))
 {
     include "inc/headerCon.php";
 }
@@ -9,110 +27,74 @@ else
     include "inc/header.php";
 }
 
-$f=new fonctionC();
-if(isset($_GET["search"]))
-{
-    $p=$f->getProds(null,null,null,$_GET["search"]);
-}
+include_once "admin/inc/produit.php";
+$Prod=new fonctionC();
+if(isset($_GET['ID']))
+$list=$Prod->afficherproduits_cat($_GET['ID']);
 else
-{
-    $p=$f->getProds();
-}
+$list=$Prod->afficherproduits();
 
+?>
+<?php 
+include_once "admin/inc/categorie.php";
+
+$cat= new fonctionC();
+$list2=$cat->affichercategories();
 ?>
     <section class="cat_product_area section_gap">
         <div class="container">
             <div class="row flex-row-reverse">
                 <div class="col-lg-9">
-                    <div class="product_top_bar">
-                        <div class="left_dorp">
-                            <select class="sorting">
-                                <option value="1">Default sorting</option>
-                                <option value="2">Default sorting 01</option>
-                                <option value="4">Default sorting 02</option>
-                            </select>
-                            <select class="show">
-                                <option value="1">Show 12</option>
-                                <option value="2">Show 14</option>
-                                <option value="4">Show 16</option>
-                            </select>
-                        </div>
+                    
+  <div class="product_top_bar">
+                        
+    <input class="search-f mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="kword" onkeyup="showResult(this.value)" style="color: black">
                     </div>
 
-
-                    <div class="latest_product_inner">
+                    <div class="latest_product_inner" id="DATA">
                         <div class="row">
-                          <?php
-                            foreach ($p as $t)
+                            <?php foreach($list as $row)
                             {
-                              echo '
-                              <div class="col-lg-4 col-md-6">
-                                  <div class="single-product">
-                                      <div class="product-img">
-                                          <img
-                                              class="card-img"
-                                              src="img/prods/'.$t["image"].'"
-                                              alt=""
-                                          />
-                                          <div class="p_icon">
-                                              <a href="#">
-                                                  <i class="far fa-eye"></i>
-                                              </a>';
-                                              if(isset($_SESSION['email']))
+                            echo'
+                            <div class="col-lg-4 col-md-6">
+                                <div class="single-product">
+                                    <div class="product-img">
+                                        <img height="250px" width="250px"
+                                            class="card-img"
+                                            src="admin/'.$row['image'].'"
+                                            alt=""
+                                        />
+                                        <div class="p_icon">
+                                            <a href="single.product.php?ID='.$row["reference"].'">
+                                                <i class="far fa-eye"></i>
+                                            </a>';
+                                                                                          if(isset($_SESSION['email']))
                                               {
                                                   echo'<form style="display: inline-block;"  method="post" action="admin/forms.php">
-                                                  <input type="hidden" name="pId" value="'.$t["reference"].'" >
+                                                  <input type="hidden" name="pId" value="'.$row["reference"].'" >
                                                   <input type="hidden" name="un" value="'.$_SESSION['email'].'" >
                                                   <input type="hidden" name="form" value="addWish" >
                                                   <button id="add-to-cart" type="submit"><i class="far fa-heart"></i></i></button>
-
                                               </form>';
                                               }
                                                 echo'
                                               <form style="display: inline-block;"  method="post" action="admin/forms.php">
-                                                  <input type="hidden" name="pId" value="'.$t["reference"].'" >
+                                                  <input type="hidden" name="pId" value="'.$row["reference"].'" >
                                                   <input type="hidden" name="form" value="addCart" >
                                                   <button id="add-to-cart" type="submit"><i class="fas fa-cart-plus"></i></button>
-
                                               </form>
-
-                                          </div>
-                                      </div>
-                                      <div class="product-btm">
-                                          <a href="#" class="d-block">
-                                              <h4>'.$t["nom_produit"].'</h4>
-                                          </a>';
-                                              if($t["en_prom"]==1)
-                                              {
-                                                  $prom=$f->getProms($t["id_prom"]);
-                                                    foreach ($prom as $ppp)
-                                                    {
-                                                        $newP=$t["prix"]-($t["prix"]*($ppp["pourcentag"]/100));
-                                                    }
-
-                                                  echo '
-                                                  <div class="mt-3">
-                                                     <span style="text-decoration: line-through tomato;" class="mr-4">'.$t["prix"].' <sup>dt/m²</sup></span>
-                                                     <span class="mr-4">'.$newP.' <sup>dt/m²</sup></span> 
-                                                  </div>
-                                                  ';
-                                              }
-                                              else
-                                              {
-                                                  echo '
-                                                  <div class="mt-3">
-                                                     <span class="mr-4">'.$t["prix"].' dt/m²</span>
-                                                  </div>
-                                                  ';
-                                              }
-
-                                        echo '
-                                      </div>
-                                  </div>
-                              </div>
-                              ';
-                            }
-                           ?>
+                                        </div>
+                                    </div>
+                                    <div class="product-btm">
+                                        <a href="#" class="d-block">
+                                            <h4>'.$row['nom_produit'].'</h4>
+                                        </a>
+                                        <div class="mt-3">
+                                            <span class="mr-4">'.$row['prix'].' DT</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>'; }?>
 
 
                         </div>
@@ -126,61 +108,27 @@ else
                                 <h3>Browse Categories</h3>
                             </div>
                             <div class="widgets_inner">
-                                <ul class="list">
-                                    <li>
-                                        <a href="#">Inner Wall</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Outer Wall</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Bedhead</a>
-                                    </li>
-                                </ul>
+                                 <?php
+                        foreach($list2 as $rw)
+                            echo'
+                        <a class="dropdown-item" href="products.php?ID='.$rw['reference'].'">'.$rw['nom_categorie'].'</a>
+                        <div class="dropdown-divider"></div>';
+                    ?>
+                    
+
+                    <a class="dropdown-item" href="products.php">Ascending Order</a>
                             </div>
                         </aside>
 
-                        <aside class="left_widgets p_filter_widgets">
-                            <div class="l_w_title">
-                                <h3>Color Filter</h3>
-                            </div>
-                            <div class="widgets_inner">
-                                <ul class="list">
-                                    <li>
-                                        <a href="#">white</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">grey</a>
-                                    </li>
-                                    <li class="active">
-                                        <a href="#">Black</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">yellow</a>
-                                    </li>
+                        
 
-                                </ul>
-                            </div>
-                        </aside>
-
-                        <aside class="left_widgets p_filter_widgets">
-                            <div class="l_w_title">
-                                <h3>Price Filter</h3>
-                            </div>
-                            <div class="widgets_inner">
-                                <div class="range_item">
-                                    <div id="slider-range"></div>
-                                    <div class="">
-                                        <label for="amount">Price : </label>
-                                        <input type="text" id="amount" readonly />
-                                    </div>
-                                </div>
-                            </div>
-                        </aside>
+                        
                     </div>
                 </div>
             </div>
         </div>
+
+        
     </section>
 <?php
     include "inc/footer.php"

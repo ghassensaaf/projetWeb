@@ -87,8 +87,8 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Prods/Orders</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">Categories</a></li>
-                            <li><i class="fa fa-table"></i><a href="prods.php">Prods</a></li>
+                            <li><i class="fa fa-table"></i><a href="categories.php">Categories</a></li>
+                            <li><i class="fa fa-table"></i><a href="produits.php">Prods</a></li>
                             <li><i class="fa fa-table"></i><a href="orders.php">Orders</a></li>
                         </ul>
                     </li>

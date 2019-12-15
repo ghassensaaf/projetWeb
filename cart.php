@@ -49,7 +49,7 @@ else
                                     echo '
                                
                                 <tr>
-                                    <td class="product-thumbnail"><a href="#"><img src="img/prods/'.$d["image"].'" width="80px" alt="product img"></a></td>
+                                    <td class="product-thumbnail"><a href="#"><img src="admin/'.$d["image"].'" width="80px" alt="product img"></a></td>
                                     <td class="product-name"><a href="#">'.$d["nom_produit"].'</a></td>
                                     <td class="product-price"><span class="amount">'.$d["prix"].' TND</span></td>
                                     <td class="product-quantity">

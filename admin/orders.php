@@ -60,7 +60,7 @@ $la=$f->getOrders();
     </div>
 </div>
 
-<div class="content">
+<div style="margin-top: 40%;" class="content">
     <div class="animated fadeIn">
         <div class="row">
             <div class="col-lg-12">
@@ -225,8 +225,7 @@ $la=$f->getOrders();
 
 
 <?php  include 'inc/footer.php'?>
-<<<<<<< HEAD
-=======
+
 
 </div><!-- /#right-panel -->
 
